@@ -195,11 +195,9 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 	if (GetAsyncKeyState('W') & 0x8000)
 	{
 		bool hit = false;
-
 		if (!hit)
 		{
 			mCamera.Walk(10.0f * dt);
-
 		}
 	}
 
