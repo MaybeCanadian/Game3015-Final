@@ -14,6 +14,8 @@ World::World(Game* game)
 void World::update(const GameTimer& gt)
 {
 	mSceneGraph->update(gt);
+
+	
 }
 
 void World::draw()
@@ -27,7 +29,7 @@ void World::buildScene()
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.2, 0.0);
 	mPlayerAircraft->setScale(0.5, 0.5, 0.5);
-	//mPlayerAircraft->setVelocity(mScrollSpeed, 0.0, 0.0);
+	//mPlayerAircraft->setVelocity(0.0, (float)1.0, 0.0);
 	mSceneGraph->attachChild(std::move(player));
 
 	std::unique_ptr<Aircraft> enemy1(new Aircraft(Aircraft::Raptor, mGame));

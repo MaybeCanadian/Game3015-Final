@@ -1,5 +1,2 @@
-﻿  World.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(28,42): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(35,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(42,38): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Game.cpp
   Starter.vcxproj -> C:\Users\ecoff\source\repos\DirectX12\A1\x64\Debug\Starter.exe

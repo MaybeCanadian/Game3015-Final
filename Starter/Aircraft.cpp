@@ -20,6 +20,8 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 
 void Aircraft::drawCurrent() const
 {	
+	renderer->World = getTransform();
+	renderer->NumFramesDirty++;
 }
 
 void Aircraft::buildCurrent()
