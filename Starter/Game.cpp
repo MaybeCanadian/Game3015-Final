@@ -20,8 +20,8 @@ bool Game::Initialize()
 		return false;
 
 
-	mCamera.SetPosition(0, 0.5, -2);
-	mCamera.Pitch(0);
+	mCamera.SetPosition(0, 1.5, -2);
+	mCamera.Pitch(70 * 3.14 / 360);
 
 	// Reset the command list to prep for initialization commands.
 	ThrowIfFailed(mCommandList->Reset(mDirectCmdListAlloc.Get(), nullptr));
