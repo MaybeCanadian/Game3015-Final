@@ -5,15 +5,20 @@ SpriteNode::SpriteNode(Game* game) : Entity(game)
 {
 }
 
-void SpriteNode::updateCurrent(const GameTimer& gt) const 
+void SpriteNode::updateCurrent(const GameTimer& gt) 
 {
-	if (getWorldPosition().z < -5.0f) {
-		//move(0.0f, 0.0f, 0.0f);
+	Entity::updateCurrent(gt);
+
+	if (getWorldPosition().z < -200.0f) {
+		setPosition(0.0f, 0.0f, 0.0f);
 	}
 }
 
 void SpriteNode::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
 {
+	renderer->World = getTransform();
+	renderer->NumFramesDirty++;
+
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
 	UINT matCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(MaterialConstants));
 

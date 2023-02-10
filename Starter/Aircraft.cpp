@@ -18,9 +18,9 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 	}
 }
 
-void Aircraft::updateCurrent(const GameTimer& gt) const
+void Aircraft::updateCurrent(const GameTimer& gt)
 {
-	
+	Entity::updateCurrent(gt);
 }
 
 void Aircraft::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
