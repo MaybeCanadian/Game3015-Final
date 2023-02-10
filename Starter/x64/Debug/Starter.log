@@ -1,3 +1,6 @@
-﻿  Game.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(24,31): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  Aircraft.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(58,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  SpriteNode.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(48,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  Generating Code...
   Starter.vcxproj -> C:\Users\ecoff\source\repos\DirectX12\A1\x64\Debug\Starter.exe

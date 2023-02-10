@@ -8,7 +8,7 @@ class World
 public:
 	explicit							World(Game* window);
 	void								update(const GameTimer& gt);
-	void								draw();
+	void								draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource);
 
 	//void								loadTextures();
 	void								buildScene();

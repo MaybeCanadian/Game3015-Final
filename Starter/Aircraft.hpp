@@ -18,7 +18,8 @@ public:
 
 
 private:
-	virtual void		drawCurrent() const;
+	virtual void		updateCurrent(const GameTimer& gt) const;
+	virtual void		drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
 	virtual void		buildCurrent();
 
 

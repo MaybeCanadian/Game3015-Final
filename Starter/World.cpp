@@ -16,9 +16,9 @@ void World::update(const GameTimer& gt)
 	mSceneGraph->update(gt);
 }
 
-void World::draw()
+void World::draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource)
 {
-	mSceneGraph->draw();
+	mSceneGraph->draw(cmdList, mCurrFrameResource);
 }
 
 void World::buildScene()

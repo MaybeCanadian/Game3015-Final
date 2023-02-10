@@ -47,22 +47,22 @@ void SceneNode::updateChildren(const GameTimer& gt)
 	}
 }
 
-void SceneNode::draw() const
+void SceneNode::draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
 {
-	drawCurrent();
-	drawChildren();
+	drawCurrent(cmdList, mCurrFrameResource);
+	drawChildren(cmdList, mCurrFrameResource);
 }
 
-void SceneNode::drawCurrent() const
+void SceneNode::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
 {
 	//Empty for now
 }
 
-void SceneNode::drawChildren() const
+void SceneNode::drawChildren(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
 {
 	for (const Ptr& child : mChildren)
 	{
-		child->draw();
+		child->draw(cmdList, mCurrFrameResource);
 	}
 }
 

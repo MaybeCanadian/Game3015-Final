@@ -127,8 +127,8 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	mWorld.draw();
-	DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
+	mWorld.draw(mCommandList.Get(), mCurrFrameResource);
+	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.
 	mCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
@@ -471,7 +471,6 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = DesertTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(DesertTex.Get(), &srvDesc, hDescriptor);
-
 }
 
 void Game::BuildShadersAndInputLayout()
@@ -712,4 +711,14 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 		pointWrap, pointClamp,
 		linearWrap, linearClamp,
 		anisotropicWrap, anisotropicClamp };
+}
+
+ComPtr<ID3D12DescriptorHeap> Game::GetDescriptorHeap()
+{
+	return mSrvDescriptorHeap;
+}
+
+UINT Game::GetDescriptorHeapSize()
+{
+	return mCbvSrvDescriptorSize;
 }

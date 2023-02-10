@@ -62,7 +62,7 @@ public:
 	Ptr						detachChild(const SceneNode& node);
 
 	void					update(const GameTimer& gt);
-	void					draw() const;
+	void					draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
 	void					build();
 
 	XMFLOAT3				getWorldPosition() const;
@@ -80,14 +80,15 @@ private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
 
-	virtual void			drawCurrent() const;
-	void					drawChildren() const;
+	virtual void			drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
+	void					drawChildren(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
 	virtual void			buildCurrent();
 	void					buildChildren();
 
 protected:
 	Game*					game;
 	RenderItem*				renderer;
+
 private:
 	XMFLOAT3				mWorldPosition;
 	XMFLOAT3				mWorldRotation;
