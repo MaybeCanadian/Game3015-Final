@@ -25,9 +25,9 @@ void World::buildScene()
 {
 	std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle, mGame));
 	mPlayerAircraft = player.get();
-	mPlayerAircraft->setPosition(0, 0.2, 0.0);
+	mPlayerAircraft->setPosition(0, 0.5, 0.0);
 	mPlayerAircraft->setScale(0.75, 0.75, 0.75);
-	//mPlayerAircraft->setVelocity(0.0f, 0.1f, 0.0f);
+	mPlayerAircraft->setVelocity(1.0f, 0.0f, 0.0f);
 	mSceneGraph->attachChild(std::move(player));
 
 	std::unique_ptr<Aircraft> enemy1(new Aircraft(Aircraft::Raptor, mGame));

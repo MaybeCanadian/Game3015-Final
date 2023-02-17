@@ -21,6 +21,14 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 void Aircraft::updateCurrent(const GameTimer& gt)
 {
 	Entity::updateCurrent(gt);
+
+	if (getWorldPosition().x < -1.0f) {
+		setVelocity(1.0f, 0.0f, 0.0f);
+	}
+
+	if (getWorldPosition().x > 1.0f) {
+		setVelocity(-1.0f, 0.0f, 0.0f);
+	}
 }
 
 void Aircraft::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
