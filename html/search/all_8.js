@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lights_0',['Lights',['../struct_pass_constants.html#ab8ff697b065ed13983d022e44e09f35f',1,'PassConstants']]]
+  ['scenenode_0',['SceneNode',['../class_scene_node.html',1,'']]],
+  ['spritenode_1',['SpriteNode',['../class_sprite_node.html',1,'']]]
 ];

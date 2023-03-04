@@ -17,13 +17,15 @@ public:
 	Aircraft(Type type, Game* game);
 
 
-private:
+protected:
+	Aircraft();
 	virtual void		updateCurrent(const GameTimer& gt);
 	virtual void		drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
 	virtual void		buildCurrent();
+	unsigned int		GetCategory() const;
 
 
-private:
+protected:
 	Type				mType;
 	std::string			mSprite;
 };

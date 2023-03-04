@@ -21,14 +21,6 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 void Aircraft::updateCurrent(const GameTimer& gt)
 {
 	Entity::updateCurrent(gt);
-
-	if (getWorldPosition().x < -1.0f) {
-		setVelocity(1.0f, 0.0f, 0.0f);
-	}
-
-	if (getWorldPosition().x > 1.0f) {
-		setVelocity(-1.0f, 0.0f, 0.0f);
-	}
 }
 
 void Aircraft::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
@@ -72,8 +64,15 @@ void Aircraft::buildCurrent()
 	renderer->BaseVertexLocation = renderer->Geo->DrawArgs["box"].BaseVertexLocation;
 
 	game->getRenderItems().push_back(std::move(render));
+}
 
+unsigned int Aircraft::GetCategory() const
+{
+	switch (mType) {
+	case Eagle:
+		return Category::PlayerAirCraft;
 
-
-
+	default:
+		return Category::EnemyAirCraft;
+	}
 }

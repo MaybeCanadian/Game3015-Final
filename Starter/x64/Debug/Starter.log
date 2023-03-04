@@ -1,4 +1,2 @@
-﻿  Game.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(23,32): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(24,31): warning C4305: 'argument': truncation from 'double' to 'float'
+﻿  PlayerAircraft.cpp
   Starter.vcxproj -> C:\Users\ecoff\source\repos\DirectX12\A1\x64\Debug\Starter.exe

@@ -1,0 +1,38 @@
+\hypertarget{_player_8hpp_source}{}\doxysection{Player.\+hpp}
+\label{_player_8hpp_source}\index{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Player.hpp@{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Player.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}CommandQueue.hpp"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_queue}{CommandQueue}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{public}:\ }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}();}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handleEvent(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\&\ commands);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ handleRealTimeInput(\mbox{\hyperlink{class_command_queue}{CommandQueue}}\&\ commands);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum}\ Action\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ MoveLeft,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ MoveRight,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ MoveUp,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ MoveDown,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ GetPosition,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ ActionCount}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ assignKey(Action\ action,\ \textcolor{keywordtype}{char}\ key);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getAssignedKey(Action\ action)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initializeActions();}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isRealTimeAction(Action\ action);}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00030\ \ \ \ \ std::map<char,\ Action>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mKeyBinding;}
+\DoxyCodeLine{00031\ \ \ \ \ std::map<Action,\ Command>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mActionBinding;}
+\DoxyCodeLine{00032\ \};}
+
+\end{DoxyCode}

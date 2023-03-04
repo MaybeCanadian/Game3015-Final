@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game3015-A1: Entity Class Reference</title>
+<title>Game 3015 A2: Entity Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Game3015-A1
+   <div id="projectname">Game 3015 A2
    </div>
   </td>
  </tr>
@@ -76,163 +76,115 @@ $(function() {
   <div class="headertitle"><div class="title">Entity Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="_entity_8hpp_source.html">Entity.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Entity:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_entity.png" usemap="#Entity_map" alt=""/>
   <map id="Entity_map" name="Entity_map">
-<area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="44,0,122,24"/>
-<area href="class_aircraft.html" alt="Aircraft" shape="rect" coords="0,112,78,136"/>
-<area href="class_sprite_node.html" alt="SpriteNode" shape="rect" coords="88,112,166,136"/>
+<area href="class_scene_node.html" alt="SceneNode" shape="rect" coords="51,0,143,24"/>
+<area href="class_aircraft.html" alt="Aircraft" shape="rect" coords="0,112,92,136"/>
+<area href="class_sprite_node.html" alt="SpriteNode" shape="rect" coords="102,112,194,136"/>
+<area href="class_player_aircraft.html" alt="PlayerAircraft" shape="rect" coords="0,168,92,192"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9f6b0ce5dcbdb9107ba1972da24003a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a9f6b0ce5dcbdb9107ba1972da24003a6">Entity</a> (<a class="el" href="class_game.html">Game</a> *<a class="el" href="class_scene_node.html#a06d1261ef839789469f228e7a7f2bfb9">game</a>)</td></tr>
+<tr class="memitem:a9f6b0ce5dcbdb9107ba1972da24003a6"><td class="memItemLeft" align="right" valign="top"><a id="a9f6b0ce5dcbdb9107ba1972da24003a6" name="a9f6b0ce5dcbdb9107ba1972da24003a6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (<a class="el" href="class_game.html">Game</a> *game)</td></tr>
 <tr class="separator:a9f6b0ce5dcbdb9107ba1972da24003a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf5f6bb1df6f5dba9923a2355b8c0ac2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#acf5f6bb1df6f5dba9923a2355b8c0ac2">setVelocity</a> (XMFLOAT2 velocity)</td></tr>
-<tr class="separator:acf5f6bb1df6f5dba9923a2355b8c0ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7873fbd61cf1a742d4492ec438a9ac9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a7873fbd61cf1a742d4492ec438a9ac9f">setVelocity</a> (float vx, float vy)</td></tr>
-<tr class="separator:a7873fbd61cf1a742d4492ec438a9ac9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e1cbc69431758859f15d0b9d70b8cf5"><td class="memItemLeft" align="right" valign="top">XMFLOAT2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a8e1cbc69431758859f15d0b9d70b8cf5">getVelocity</a> () const</td></tr>
-<tr class="separator:a8e1cbc69431758859f15d0b9d70b8cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a472e1690df5fb48c6c7f052e4cb39c78"><td class="memItemLeft" align="right" valign="top"><a id="a472e1690df5fb48c6c7f052e4cb39c78" name="a472e1690df5fb48c6c7f052e4cb39c78"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setVelocity</b> (XMFLOAT3 velocity)</td></tr>
+<tr class="separator:a472e1690df5fb48c6c7f052e4cb39c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3c22fe7e78968131560642e360e12b"><td class="memItemLeft" align="right" valign="top"><a id="abb3c22fe7e78968131560642e360e12b" name="abb3c22fe7e78968131560642e360e12b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setVelocity</b> (float vx, float vy, float vz)</td></tr>
+<tr class="separator:abb3c22fe7e78968131560642e360e12b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fcc5c9f7e9d705502269444ef3eca3"><td class="memItemLeft" align="right" valign="top"><a id="af4fcc5c9f7e9d705502269444ef3eca3" name="af4fcc5c9f7e9d705502269444ef3eca3"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocity</b> () const</td></tr>
+<tr class="separator:af4fcc5c9f7e9d705502269444ef3eca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af104548e2a2730ba7836544ad57aa5e0"><td class="memItemLeft" align="right" valign="top"><a id="af104548e2a2730ba7836544ad57aa5e0" name="af104548e2a2730ba7836544ad57aa5e0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>accelerate</b> (XMFLOAT3 velocity, const GameTimer &amp;)</td></tr>
+<tr class="separator:af104548e2a2730ba7836544ad57aa5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adde7d867cb160d9e716efc802be9aa92"><td class="memItemLeft" align="right" valign="top"><a id="adde7d867cb160d9e716efc802be9aa92" name="adde7d867cb160d9e716efc802be9aa92"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>accelerate</b> (float vx, float vy, float vz, const GameTimer &amp;)</td></tr>
+<tr class="separator:adde7d867cb160d9e716efc802be9aa92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac2ba9cb8ca54fff11ad7397334edcd94"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#ac2ba9cb8ca54fff11ad7397334edcd94">updateCurrent</a> (const GameTimer &amp;gt)</td></tr>
 <tr class="separator:ac2ba9cb8ca54fff11ad7397334edcd94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_scene_node"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene_node')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_scene_node.html">SceneNode</a></td></tr>
-<tr class="memitem:af1f3bf5e98c8b2c90b36057df2577d1a inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#af1f3bf5e98c8b2c90b36057df2577d1a">SceneNode</a> (<a class="el" href="class_game.html">Game</a> *<a class="el" href="class_scene_node.html#a06d1261ef839789469f228e7a7f2bfb9">game</a>)</td></tr>
+<tr class="memitem:af1f3bf5e98c8b2c90b36057df2577d1a inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="af1f3bf5e98c8b2c90b36057df2577d1a" name="af1f3bf5e98c8b2c90b36057df2577d1a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>SceneNode</b> (<a class="el" href="class_game.html">Game</a> *game)</td></tr>
 <tr class="separator:af1f3bf5e98c8b2c90b36057df2577d1a inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfa2c2ba28bce076c886eaba2d9e650 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#acdfa2c2ba28bce076c886eaba2d9e650">attachChild</a> (<a class="el" href="class_scene_node.html#aaf5c9ad8475874b51b70e400822f2e9a">Ptr</a> child)</td></tr>
+<tr class="memitem:acdfa2c2ba28bce076c886eaba2d9e650 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="acdfa2c2ba28bce076c886eaba2d9e650" name="acdfa2c2ba28bce076c886eaba2d9e650"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>attachChild</b> (Ptr child)</td></tr>
 <tr class="separator:acdfa2c2ba28bce076c886eaba2d9e650 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b9681eb3db7d9e575945b57e275e040 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_node.html#aaf5c9ad8475874b51b70e400822f2e9a">Ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a3b9681eb3db7d9e575945b57e275e040">detachChild</a> (const <a class="el" href="class_scene_node.html">SceneNode</a> &amp;node)</td></tr>
+<tr class="memitem:a3b9681eb3db7d9e575945b57e275e040 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a3b9681eb3db7d9e575945b57e275e040" name="a3b9681eb3db7d9e575945b57e275e040"></a>
+Ptr&#160;</td><td class="memItemRight" valign="bottom"><b>detachChild</b> (const <a class="el" href="class_scene_node.html">SceneNode</a> &amp;node)</td></tr>
 <tr class="separator:a3b9681eb3db7d9e575945b57e275e040 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a858b7a088c0a2d01aaa90baf05d58d08 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a858b7a088c0a2d01aaa90baf05d58d08">update</a> (const GameTimer &amp;gt)</td></tr>
+<tr class="memitem:a858b7a088c0a2d01aaa90baf05d58d08 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a858b7a088c0a2d01aaa90baf05d58d08" name="a858b7a088c0a2d01aaa90baf05d58d08"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const GameTimer &amp;gt)</td></tr>
 <tr class="separator:a858b7a088c0a2d01aaa90baf05d58d08 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b1a847182e49103bc145bd4604e056 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a41b1a847182e49103bc145bd4604e056">draw</a> () const</td></tr>
-<tr class="separator:a41b1a847182e49103bc145bd4604e056 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67ca883a91d8c45004a0786330548d8f inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a67ca883a91d8c45004a0786330548d8f">build</a> ()</td></tr>
+<tr class="memitem:a8b796f0634bfc07290cb65af5be49efc inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a8b796f0634bfc07290cb65af5be49efc" name="a8b796f0634bfc07290cb65af5be49efc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (ID3D12GraphicsCommandList *cmdList, <a class="el" href="struct_frame_resource.html">FrameResource</a> *mCurrFrameResource) const</td></tr>
+<tr class="separator:a8b796f0634bfc07290cb65af5be49efc inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67ca883a91d8c45004a0786330548d8f inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a67ca883a91d8c45004a0786330548d8f" name="a67ca883a91d8c45004a0786330548d8f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>build</b> ()</td></tr>
 <tr class="separator:a67ca883a91d8c45004a0786330548d8f inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ba2f5754854829e7e49f135bb4fce45 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a6ba2f5754854829e7e49f135bb4fce45">getWorldPosition</a> () const</td></tr>
+<tr class="memitem:a6ba2f5754854829e7e49f135bb4fce45 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a6ba2f5754854829e7e49f135bb4fce45" name="a6ba2f5754854829e7e49f135bb4fce45"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getWorldPosition</b> () const</td></tr>
 <tr class="separator:a6ba2f5754854829e7e49f135bb4fce45 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45f8882749060b059fe26eb02f7f843b inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a45f8882749060b059fe26eb02f7f843b">setPosition</a> (float x, float y, float z)</td></tr>
+<tr class="memitem:a45f8882749060b059fe26eb02f7f843b inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a45f8882749060b059fe26eb02f7f843b" name="a45f8882749060b059fe26eb02f7f843b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPosition</b> (float x, float y, float z)</td></tr>
 <tr class="separator:a45f8882749060b059fe26eb02f7f843b inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a5ce797162b569b79494b7c2a696713 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a1a5ce797162b569b79494b7c2a696713">getWorldRotation</a> () const</td></tr>
+<tr class="memitem:a1a5ce797162b569b79494b7c2a696713 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a1a5ce797162b569b79494b7c2a696713" name="a1a5ce797162b569b79494b7c2a696713"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getWorldRotation</b> () const</td></tr>
 <tr class="separator:a1a5ce797162b569b79494b7c2a696713 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66fa14e7553900ae540f13e4dc5f749b inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a66fa14e7553900ae540f13e4dc5f749b">setWorldRotation</a> (float x, float y, float z)</td></tr>
+<tr class="memitem:a66fa14e7553900ae540f13e4dc5f749b inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a66fa14e7553900ae540f13e4dc5f749b" name="a66fa14e7553900ae540f13e4dc5f749b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setWorldRotation</b> (float x, float y, float z)</td></tr>
 <tr class="separator:a66fa14e7553900ae540f13e4dc5f749b inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af875844defd567ae06c579a3244ff025 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#af875844defd567ae06c579a3244ff025">getWorldScale</a> () const</td></tr>
+<tr class="memitem:af875844defd567ae06c579a3244ff025 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="af875844defd567ae06c579a3244ff025" name="af875844defd567ae06c579a3244ff025"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getWorldScale</b> () const</td></tr>
 <tr class="separator:af875844defd567ae06c579a3244ff025 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a753cea60b8a939a82a47258f4a51df82 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a753cea60b8a939a82a47258f4a51df82">setScale</a> (float x, float y, float z)</td></tr>
+<tr class="memitem:a753cea60b8a939a82a47258f4a51df82 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a753cea60b8a939a82a47258f4a51df82" name="a753cea60b8a939a82a47258f4a51df82"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setScale</b> (float x, float y, float z)</td></tr>
 <tr class="separator:a753cea60b8a939a82a47258f4a51df82 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58fbaea11dad15681acbe6abdbff03a7 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a58fbaea11dad15681acbe6abdbff03a7">getWorldTransform</a> () const</td></tr>
+<tr class="memitem:a58fbaea11dad15681acbe6abdbff03a7 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a58fbaea11dad15681acbe6abdbff03a7" name="a58fbaea11dad15681acbe6abdbff03a7"></a>
+XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><b>getWorldTransform</b> () const</td></tr>
 <tr class="separator:a58fbaea11dad15681acbe6abdbff03a7 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e503eeca953d36b652a12ceadb64d28 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a5e503eeca953d36b652a12ceadb64d28">getTransform</a> () const</td></tr>
+<tr class="memitem:a5e503eeca953d36b652a12ceadb64d28 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a5e503eeca953d36b652a12ceadb64d28" name="a5e503eeca953d36b652a12ceadb64d28"></a>
+XMFLOAT4X4&#160;</td><td class="memItemRight" valign="bottom"><b>getTransform</b> () const</td></tr>
 <tr class="separator:a5e503eeca953d36b652a12ceadb64d28 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec657f40def4be5c901192ec85027a35 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#aec657f40def4be5c901192ec85027a35">move</a> (float x, float y, float z)</td></tr>
+<tr class="memitem:aec657f40def4be5c901192ec85027a35 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="aec657f40def4be5c901192ec85027a35" name="aec657f40def4be5c901192ec85027a35"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>move</b> (float x, float y, float z)</td></tr>
 <tr class="separator:aec657f40def4be5c901192ec85027a35 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb91ec3daca25c62eba6ed8ee5fde64 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a8eb91ec3daca25c62eba6ed8ee5fde64" name="a8eb91ec3daca25c62eba6ed8ee5fde64"></a>
+virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>GetCategory</b> () const</td></tr>
+<tr class="separator:a8eb91ec3daca25c62eba6ed8ee5fde64 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78f9a59532bbf75c1e8cff60fd49c37 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="ae78f9a59532bbf75c1e8cff60fd49c37" name="ae78f9a59532bbf75c1e8cff60fd49c37"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onCommand</b> (const <a class="el" href="struct_command.html">Command</a> &amp;command, const GameTimer &amp;dt)</td></tr>
+<tr class="separator:ae78f9a59532bbf75c1e8cff60fd49c37 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a31d59d6f95b6084907efdf6f58bdd525"><td class="memItemLeft" align="right" valign="top">XMFLOAT2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_entity.html#a31d59d6f95b6084907efdf6f58bdd525">mVelocity</a></td></tr>
-<tr class="separator:a31d59d6f95b6084907efdf6f58bdd525"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15aa77787228598dfa35f5f822695c43"><td class="memItemLeft" align="right" valign="top"><a id="a15aa77787228598dfa35f5f822695c43" name="a15aa77787228598dfa35f5f822695c43"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mVelocity</b></td></tr>
+<tr class="separator:a15aa77787228598dfa35f5f822695c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_class_scene_node"><td colspan="2" onclick="javascript:toggleInherit('pub_types_class_scene_node')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="class_scene_node.html">SceneNode</a></td></tr>
-<tr class="memitem:aaf5c9ad8475874b51b70e400822f2e9a inherit pub_types_class_scene_node"><td class="memItemLeft" align="right" valign="top">typedef std::unique_ptr&lt; <a class="el" href="class_scene_node.html">SceneNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#aaf5c9ad8475874b51b70e400822f2e9a">Ptr</a></td></tr>
+<tr class="memitem:aaf5c9ad8475874b51b70e400822f2e9a inherit pub_types_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="aaf5c9ad8475874b51b70e400822f2e9a" name="aaf5c9ad8475874b51b70e400822f2e9a"></a>
+typedef std::unique_ptr&lt; <a class="el" href="class_scene_node.html">SceneNode</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Ptr</b></td></tr>
 <tr class="separator:aaf5c9ad8475874b51b70e400822f2e9a inherit pub_types_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_scene_node"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene_node')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_scene_node.html">SceneNode</a></td></tr>
-<tr class="memitem:a06d1261ef839789469f228e7a7f2bfb9 inherit pro_attribs_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a06d1261ef839789469f228e7a7f2bfb9">game</a></td></tr>
+<tr class="memitem:a06d1261ef839789469f228e7a7f2bfb9 inherit pro_attribs_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a06d1261ef839789469f228e7a7f2bfb9" name="a06d1261ef839789469f228e7a7f2bfb9"></a>
+<a class="el" href="class_game.html">Game</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>game</b></td></tr>
 <tr class="separator:a06d1261ef839789469f228e7a7f2bfb9 inherit pro_attribs_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51b22a4d6789039a96ebab097ed03db0 inherit pro_attribs_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_render_item.html">RenderItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_node.html#a51b22a4d6789039a96ebab097ed03db0">renderer</a></td></tr>
+<tr class="memitem:a51b22a4d6789039a96ebab097ed03db0 inherit pro_attribs_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a51b22a4d6789039a96ebab097ed03db0" name="a51b22a4d6789039a96ebab097ed03db0"></a>
+<a class="el" href="struct_render_item.html">RenderItem</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>renderer</b></td></tr>
 <tr class="separator:a51b22a4d6789039a96ebab097ed03db0 inherit pro_attribs_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9f6b0ce5dcbdb9107ba1972da24003a6" name="a9f6b0ce5dcbdb9107ba1972da24003a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9f6b0ce5dcbdb9107ba1972da24003a6">&#9670;&#160;</a></span>Entity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Entity::Entity </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_game.html">Game</a> *&#160;</td>
-          <td class="paramname"><em>game</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e1cbc69431758859f15d0b9d70b8cf5" name="a8e1cbc69431758859f15d0b9d70b8cf5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e1cbc69431758859f15d0b9d70b8cf5">&#9670;&#160;</a></span>getVelocity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">XMFLOAT2 Entity::getVelocity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7873fbd61cf1a742d4492ec438a9ac9f" name="a7873fbd61cf1a742d4492ec438a9ac9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7873fbd61cf1a742d4492ec438a9ac9f">&#9670;&#160;</a></span>setVelocity() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Entity::setVelocity </td>
-          <td>(</td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>vx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>vy</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acf5f6bb1df6f5dba9923a2355b8c0ac2" name="acf5f6bb1df6f5dba9923a2355b8c0ac2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf5f6bb1df6f5dba9923a2355b8c0ac2">&#9670;&#160;</a></span>setVelocity() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Entity::setVelocity </td>
-          <td>(</td>
-          <td class="paramtype">XMFLOAT2&#160;</td>
-          <td class="paramname"><em>velocity</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ac2ba9cb8ca54fff11ad7397334edcd94" name="ac2ba9cb8ca54fff11ad7397334edcd94"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac2ba9cb8ca54fff11ad7397334edcd94">&#9670;&#160;</a></span>updateCurrent()</h2>
 
@@ -261,24 +213,9 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a31d59d6f95b6084907efdf6f58bdd525" name="a31d59d6f95b6084907efdf6f58bdd525"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a31d59d6f95b6084907efdf6f58bdd525">&#9670;&#160;</a></span>mVelocity</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">XMFLOAT2 Entity::mVelocity</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Starter/<a class="el" href="_entity_8hpp_source.html">Entity.hpp</a></li>
-<li>Starter/<a class="el" href="_entity_8cpp.html">Entity.cpp</a></li>
+<li>C:/Users/ecoff/source/repos/DirectX12/A1/Starter/<a class="el" href="_entity_8hpp_source.html">Entity.hpp</a></li>
+<li>C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Entity.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

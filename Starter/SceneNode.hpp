@@ -5,6 +5,7 @@
 #include "../Common/GeometryGenerator.h"
 #include "../Common/Camera.h"
 #include "FrameResource.h"
+#include "Category.hpp"
 
 using Microsoft::WRL::ComPtr;
 using namespace DirectX;
@@ -49,6 +50,8 @@ struct RenderItem
 
 class Game;
 
+struct Command;
+
 class SceneNode
 {
 public:
@@ -76,6 +79,10 @@ public:
 	XMFLOAT4X4				getTransform() const;
 
 	void					move(float x, float y, float z);
+
+	virtual unsigned int	GetCategory() const;
+	void					onCommand(const Command& command, const GameTimer& dt);
+
 private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);

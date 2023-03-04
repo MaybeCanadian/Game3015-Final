@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include "Player.hpp"
 
 class Game : public D3DApp
 {
@@ -14,9 +15,11 @@ private:
 	virtual void Update(const GameTimer& gt)override;
 	virtual void Draw(const GameTimer& gt)override;
 
+	void ProcessEvents();
 	virtual void OnMouseDown(WPARAM btnState, int x, int y)override;
 	virtual void OnMouseUp(WPARAM btnState, int x, int y)override;
 	virtual void OnMouseMove(WPARAM btnState, int x, int y)override;
+	Player	mPlayer;
 
 	void OnKeyboardInput(const GameTimer& gt);
 	void UpdateCamera(const GameTimer& gt);

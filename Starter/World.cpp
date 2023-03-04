@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include <iostream>
 
 World::World(Game* game)
 	: mSceneGraph(new SceneNode(game))
@@ -13,6 +14,11 @@ World::World(Game* game)
 
 void World::update(const GameTimer& gt)
 {
+	while (!mCommandQueue.isEmpty()) {
+		mSceneGraph->onCommand(mCommandQueue.pop(), gt);
+		std::cout << "Test\n";
+	}
+
 	mSceneGraph->update(gt);
 }
 
@@ -21,13 +27,18 @@ void World::draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameRe
 	mSceneGraph->draw(cmdList, mCurrFrameResource);
 }
 
+CommandQueue& World::getCommandQueue()
+{
+	return mCommandQueue;
+}
+
 void World::buildScene()
 {
-	std::unique_ptr<Aircraft> player(new Aircraft(Aircraft::Eagle, mGame));
+	std::unique_ptr<PlayerAircraft> player(new PlayerAircraft(mGame));
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.5, 0.0);
 	mPlayerAircraft->setScale(0.75, 0.75, 0.75);
-	mPlayerAircraft->setVelocity(1.0f, 0.0f, 0.0f);
+	//mPlayerAircraft->setVelocity(1.0f, 0.0f, 0.0f);
 	mSceneGraph->attachChild(std::move(player));
 
 	std::unique_ptr<Aircraft> enemy1(new Aircraft(Aircraft::Raptor, mGame));

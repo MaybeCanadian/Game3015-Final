@@ -1,0 +1,22 @@
+\hypertarget{_command_queue_8hpp_source}{}\doxysection{Command\+Queue.\+hpp}
+\label{_command_queue_8hpp_source}\index{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/CommandQueue.hpp@{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/CommandQueue.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Command.hpp"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_queue}{CommandQueue}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ push(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_command}{Command}}\&\ command);}
+\DoxyCodeLine{00010\ \ \ \ \ \mbox{\hyperlink{struct_command}{Command}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ pop();}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isEmpty()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00015\ \ \ \ \ std::queue<Command>\ \ \ \ \ \ \ \ \ mQueue;}
+\DoxyCodeLine{00016\ \};}
+
+\end{DoxyCode}

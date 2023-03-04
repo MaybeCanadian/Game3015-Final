@@ -9,6 +9,8 @@ public:
 	void				setVelocity(XMFLOAT3 velocity);
 	void				setVelocity(float vx, float vy, float vz);
 	XMFLOAT3			getVelocity() const;
+	void				accelerate(XMFLOAT3 velocity, const GameTimer&);
+	void				accelerate(float vx, float vy, float vz, const GameTimer&);
 
 	virtual	void		updateCurrent(const GameTimer& gt);
 
