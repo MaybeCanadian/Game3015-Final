@@ -1,10 +1,18 @@
 #include "Game.hpp"
+#include "State.hpp"
+#include "StateIdentifiers.hpp"
+#include "TitleState.hpp"
+#include "GameState.hpp"
+#include "MenuState.hpp"
+#include "PauseState.hpp"
+#include "LoadingState.hpp"
 
 const int gNumFrameResources = 3;
 
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
 	, mWorld(this)
+	, mStateStack(State::Context(mWorld, mPlayer))
 {
 }
 
@@ -16,10 +24,8 @@ Game::~Game()
 
 bool Game::Initialize()
 {
-
 	if (!D3DApp::Initialize())
 		return false;
-
 
 	mCamera.SetPosition(0, 2, -2.2);
 	mCamera.Pitch(65 * 3.14 / 360);
@@ -48,6 +54,8 @@ bool Game::Initialize()
 
 	// Wait until initialization is complete.
 	FlushCommandQueue();
+
+	registerStates();
 
 	return true;
 }
@@ -469,6 +477,15 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = DesertTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(DesertTex.Get(), &srvDesc, hDescriptor);
+}
+
+void Game::registerStates()
+{
+	mStateStack.registerState<TitleState>(States::Title);
+	mStateStack.registerState<MenuState>(States::Menu);
+	mStateStack.registerState<GameState>(States::Game);
+	mStateStack.registerState<PauseState>(States::Pause);
+	mStateStack.registerState<LoadingState>(States::Loading);
 }
 
 void Game::BuildShadersAndInputLayout()

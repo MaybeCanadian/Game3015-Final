@@ -1,6 +1,8 @@
 #include "World.hpp"
 #include "Player.hpp"
 
+#include "StateStack.hpp"
+
 class Game : public D3DApp
 {
 public:
@@ -19,7 +21,6 @@ private:
 	virtual void OnMouseDown(WPARAM btnState, int x, int y)override;
 	virtual void OnMouseUp(WPARAM btnState, int x, int y)override;
 	virtual void OnMouseMove(WPARAM btnState, int x, int y)override;
-	Player	mPlayer;
 
 	void OnKeyboardInput(const GameTimer& gt);
 	void UpdateCamera(const GameTimer& gt);
@@ -35,6 +36,8 @@ private:
 
 	//step9
 	void BuildDescriptorHeaps();
+
+	void registerStates();
 
 	void BuildShadersAndInputLayout();
 	void BuildShapeGeometry();
@@ -90,6 +93,9 @@ private:
 	POINT mLastMousePos;
 	Camera mCamera;
 	World mWorld;
+	Player	mPlayer;
+
+	StateStack mStateStack;
 
 public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }
