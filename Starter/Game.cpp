@@ -142,7 +142,7 @@ void Game::Draw(const GameTimer& gt)
 	context.mCbvSrvDescriptorSize = mCbvSrvDescriptorSize;
 	context.mSrvDescriptorHeap = mSrvDescriptorHeap;
 
-	mWorld.draw(mCommandList.Get(), mCurrFrameResource, context);
+	mWorld.draw(context);
 	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.

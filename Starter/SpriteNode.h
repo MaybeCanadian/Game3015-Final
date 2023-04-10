@@ -9,6 +9,6 @@ public:
 
 private:
 	virtual void		updateCurrent(const GameTimer& gt);
-	virtual void		drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context) const;
+	virtual void		drawCurrent(RenderContext context) const;
 	virtual void		buildCurrent();
 };

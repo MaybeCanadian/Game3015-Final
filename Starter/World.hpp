@@ -13,7 +13,7 @@ class World
 public:
 	explicit							World(Game* game);
 	void								update(const GameTimer& gt);
-	void								draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context);
+	void								draw(RenderContext context);
 	CommandQueue&						getCommandQueue();
 	void								buildScene();
 
