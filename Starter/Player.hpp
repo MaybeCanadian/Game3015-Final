@@ -19,6 +19,10 @@ public:
 		GetPosition,
 		ActionCount
 	};
+	enum ActionState {
+		Unpressed, 
+		Pressed,
+	};
 	void									assignKey(Action action, char key);
 	char									getAssignedKey(Action action) const;
 
@@ -29,4 +33,5 @@ private:
 private:
 	std::map<char, Action>					mKeyBinding;
 	std::map<Action, Command>				mActionBinding;
+	std::map<Action, ActionState>			mActionStateMapping;
 };

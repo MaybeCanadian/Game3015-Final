@@ -15,6 +15,7 @@ struct Command {
 
 	std::function<void(SceneNode&, const GameTimer&)>	action;
 	unsigned int										category;
+	bool												pressed;
 };
 
 template <typename GameObject, typename Function>

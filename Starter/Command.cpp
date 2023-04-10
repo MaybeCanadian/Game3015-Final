@@ -3,5 +3,6 @@
 Command::Command()
 	: action()
 	, category(Category::None)
+	, pressed(false)
 {
 }

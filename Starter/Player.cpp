@@ -45,14 +45,25 @@ void Player::handleEvent(CommandQueue& commands)
 void Player::handleRealTimeInput(CommandQueue& commands)
 {
 	for (auto& pair : mKeyBinding) {
+		auto found = mKeyBinding.find(pair.first);
 
 		if (GetAsyncKeyState(pair.first) & 0x8000) {
-			auto found = mKeyBinding.find(pair.first);
-
-			if (found != mKeyBinding.end() && isRealTimeAction(found->second))
-
+			if (found != mKeyBinding.end() && isRealTimeAction(found->second)) {
 				commands.push(mActionBinding[found->second]);
-			
+			}
+			else {
+				auto state = mActionStateMapping.find(pair.second);
+				if (state->second == Unpressed) {
+					commands.push(mActionBinding[found->second]);
+					state->second = Pressed;
+				}
+			}
+		}
+		else {
+			auto state = mActionStateMapping.find(pair.second);
+			if (state->second == Pressed) {
+				state->second = Unpressed;
+			}
 		}
 	}
 }
@@ -86,12 +97,21 @@ void Player::initializeActions()
 	const float playerSpeed = 1.0f;
 
 	mActionBinding[MoveLeft].action = derivedAction<Aircraft>(AircraftMover(-playerSpeed, 0.f, 0.0f));
+	mActionStateMapping[MoveLeft] = Unpressed;
+
 	mActionBinding[MoveRight].action = derivedAction<Aircraft>(AircraftMover(+playerSpeed, 0.f, 0.0f));
+	mActionStateMapping[MoveRight] = Unpressed;
+
 	mActionBinding[MoveUp].action = derivedAction<Aircraft>(AircraftMover(0.f, 0.0f, +playerSpeed));
+	mActionStateMapping[MoveUp] = Unpressed;
+
 	mActionBinding[MoveDown].action = derivedAction<Aircraft>(AircraftMover(0.f,0.0f, -playerSpeed));
+	mActionStateMapping[MoveDown] = Unpressed;
+
 	mActionBinding[GetPosition].action = [](SceneNode& s, const GameTimer&) {
 		std::cout << s.getWorldPosition().x << "," << s.getWorldPosition().y << "," << s.getWorldPosition().z << "\n";
 	};
+	mActionStateMapping[GetPosition] = Unpressed;
 }
 
 bool Player::isRealTimeAction(Action action)
