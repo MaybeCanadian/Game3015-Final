@@ -20,7 +20,7 @@ public:
 protected:
 	Aircraft();
 	virtual void		updateCurrent(const GameTimer& gt);
-	virtual void		drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
+	virtual void		drawCurrent(Game::RenderContext context) const;
 	virtual void		buildCurrent();
 	unsigned int		GetCategory() const;
 

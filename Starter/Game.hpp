@@ -1,15 +1,26 @@
+#pragma once
+#include "StateStack.hpp"
 #include "World.hpp"
 #include "Player.hpp"
 
-#include "StateStack.hpp"
-
 class Game : public D3DApp
 {
+public:
+	struct RenderContext
+	{
+		ID3D12GraphicsCommandList* cmdList;
+		FrameResource* mCurrFrameResource;
+		UINT mCbvSrvDescriptorSize;
+		ComPtr<ID3D12DescriptorHeap> mSrvDescriptorHeap;
+	};
+
 public:
 	Game(HINSTANCE hInstance);
 	Game(const Game& rhs) = delete;
 	Game& operator=(const Game& rhs) = delete;
 	~Game();
+
+
 
 	virtual bool Initialize()override;
 private:
@@ -101,7 +112,4 @@ public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }
 	std::unordered_map<std::string, std::unique_ptr<Material>>& getMaterials() { return mMaterials; }
 	std::unordered_map<std::string, std::unique_ptr<MeshGeometry>>& getGeometries() { return mGeometries; }
-	ComPtr<ID3D12DescriptorHeap> GetDescriptorHeap();
-	UINT GetDescriptorHeapSize();
-
 };

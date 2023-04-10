@@ -6,14 +6,15 @@ GameState::GameState(StateStack& stack, Context context)
 	, mWorld(*context.world)
 	, mPlayer(*context.player)
 {
+
 }
 
-void GameState::draw()
+void GameState::draw(Game::RenderContext context)
 {
-	//mWorld.draw();
+	mWorld.draw(context);
 }
 
-bool GameState::update(GameTimer& const dt)
+bool GameState::update(const GameTimer& dt)
 {
 	mWorld.update(dt);
 
@@ -22,17 +23,3 @@ bool GameState::update(GameTimer& const dt)
 
 	return true;
 }
-
-//bool GameState::handleEvent(const sf::Event& event)
-//{
-//	// Game input handling
-//	CommandQueue& commands = mWorld.getCommandQueue();
-//	mPlayer.handleEvent(event, commands);
-//
-//	// Escape pressed, trigger the pause screen
-//#pragma region step 1
-//	if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape)
-//		requestStackPush(States::Pause);
-//#pragma endregion
-//	return true;
-//}

@@ -70,7 +70,6 @@
     <ClInclude Include="PauseState.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="PlayerAircraft.hpp" />
-    <ClInclude Include="ResourceHolder.hpp" />
     <ClInclude Include="ResourceIdentifiers.hpp" />
     <ClInclude Include="SceneNode.hpp" />
     <ClInclude Include="SpriteNode.h" />
@@ -90,7 +89,6 @@
     <Image Include="Textures\Raptor.dds" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ResourceHolder.inl" />
     <None Include="Utility.inl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

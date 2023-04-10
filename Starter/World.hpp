@@ -5,13 +5,14 @@
 #include "SpriteNode.h"
 #include "CommandQueue.hpp"
 #include "Command.hpp"
+#include "Game.hpp"
 
 class World 
 {
 public:
 	explicit							World(Game* game);
 	void								update(const GameTimer& gt);
-	void								draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource);
+	void								draw(Game::RenderContext context);
 	CommandQueue&						getCommandQueue();
 	void								buildScene();
 

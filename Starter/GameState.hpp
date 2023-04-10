@@ -16,9 +16,8 @@ class GameState : public State
 public:
 	GameState(StateStack& stack, Context context);
 
-	virtual void		draw();
-	virtual bool		update(GameTimer& const dt);
-	//virtual bool		handleEvent(const sf::Event& event);
+	virtual void		draw(Game::RenderContext context);
+	virtual bool		update(const GameTimer& dt);
 
 
 private:

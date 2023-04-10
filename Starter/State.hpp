@@ -14,6 +14,7 @@ namespace sf
 	class RenderWindow;
 }
 
+class Game;
 class StateStack;
 class Player;
 class World;
@@ -36,8 +37,8 @@ public:
 	State(StateStack& stack, Context context);
 	virtual				~State();
 
-	virtual void		draw() = 0;
-	virtual bool		update(GameTimer& const dt) = 0;
+	virtual void		draw(Game::RenderContext context) = 0;
+	virtual bool		update(const GameTimer& dt) = 0;
 	//virtual bool		handleEvent(const sf::Event& event) = 0;
 
 

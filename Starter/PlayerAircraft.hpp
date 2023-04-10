@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Aircraft.hpp"
 
 class PlayerAircraft

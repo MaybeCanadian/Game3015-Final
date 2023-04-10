@@ -1,53 +1,292 @@
-﻿  Game.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,42): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(32,36): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\GameState.hpp(20,42): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(31,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'TitleState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\TitleState.hpp(7,7): message : see declaration of 'TitleState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(484,53): message : see reference to function template instantiation 'void StateStack::registerState<TitleState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'TitleState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\TitleState.hpp(7,7): message : see declaration of 'TitleState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'MenuState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\MenuState.hpp(6,7): message : see declaration of 'MenuState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(485,51): message : see reference to function template instantiation 'void StateStack::registerState<MenuState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'MenuState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\MenuState.hpp(6,7): message : see declaration of 'MenuState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'PauseState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\PauseState.hpp(6,7): message : see declaration of 'PauseState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(487,53): message : see reference to function template instantiation 'void StateStack::registerState<PauseState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'PauseState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\PauseState.hpp(6,7): message : see declaration of 'PauseState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'LoadingState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\LoadingState.hpp(6,7): message : see declaration of 'LoadingState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(488,57): message : see reference to function template instantiation 'void StateStack::registerState<LoadingState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'LoadingState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\LoadingState.hpp(6,7): message : see declaration of 'LoadingState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
+﻿  Aircraft.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,25): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,39): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(26,16): error C2511: 'void Aircraft::drawCurrent(Game::RenderContext) const': overloaded member function not found in 'Aircraft'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(5,7): message : see declaration of 'Aircraft'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(34,17): error C2660: 'ID3D12GraphicsCommandList::IASetVertexBuffers': function does not take 2 arguments
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\d3d12.h(5942,40): message : see declaration of 'ID3D12GraphicsCommandList::IASetVertexBuffers'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(34,17): message : while trying to match the argument list '(int, int)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(50,17): error C2660: 'ID3D12GraphicsCommandList::DrawIndexedInstanced': function does not take 3 arguments
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\d3d12.h(5802,40): message : see declaration of 'ID3D12GraphicsCommandList::DrawIndexedInstanced'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(50,17): message : while trying to match the argument list '()'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.cpp(58,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  Entity.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+  Game.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,25): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,39): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(31,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(32,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(156,8): error C2660: 'World::draw': function does not take 1 arguments
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,14): message : see declaration of 'World::draw'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(156,8): message : while trying to match the argument list '(Game::RenderContext)'
+  GameState.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.hpp(106,8): error C2079: 'Game::mWorld' uses undefined class 'World'
+  LoadingState.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+  main.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,25): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,39): error C2061: syntax error: identifier 'RenderContext'
+  MenuState.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+  PauseState.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+  Player.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+  PlayerAircraft.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+  SceneNode.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,25): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,39): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(51,17): error C2511: 'void SceneNode::draw(Game::RenderContext) const': overloaded member function not found in 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Command.hpp(10,7): message : see declaration of 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(53,2): error C2660: 'SceneNode::drawCurrent': function does not take 1 arguments
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,17): message : see declaration of 'SceneNode::drawCurrent'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(53,2): message : while trying to match the argument list '(Game::RenderContext)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(54,2): error C2660: 'SceneNode::drawChildren': function does not take 1 arguments
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,11): message : see declaration of 'SceneNode::drawChildren'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(54,2): message : while trying to match the argument list '(Game::RenderContext)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(57,17): error C2511: 'void SceneNode::drawCurrent(Game::RenderContext) const': overloaded member function not found in 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Command.hpp(10,7): message : see declaration of 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(62,17): error C2511: 'void SceneNode::drawChildren(Game::RenderContext) const': overloaded member function not found in 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Command.hpp(10,7): message : see declaration of 'SceneNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): error C2597: illegal reference to non-static member 'SceneNode::mChildren'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(102,20): message : see declaration of 'SceneNode::mChildren'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): error C3535: cannot deduce type for 'auto &&' from 'unknown'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): error C2440: 'initializing': cannot convert from 'unknown' to 'int &&'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : Reason: cannot convert from 'unknown' to 'int'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : There is no context in which this conversion is possible
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): error C2672: 'begin': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1534,27): message : could be '_Ty *std::begin(_Ty (&)[_Size]) noexcept'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Ty *std::begin(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1516,30): message : or       'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : Failed to specialize function template 'unknown-type std::begin(const _Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : With the following template arguments:
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Container=int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1510,30): message : or       'unknown-type std::begin(_Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : Failed to specialize function template 'unknown-type std::begin(_Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : With the following template arguments:
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Container=int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\initializer_list(55,35): message : or       'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : 'const _Elem *std::begin(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'int'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): error C2672: 'end': no matching overloaded function found
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1539,27): message : could be '_Ty *std::end(_Ty (&)[_Size]) noexcept'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Ty *std::end(_Ty (&)[_Size]) noexcept': could not deduce template argument for '_Ty (&)[_Size]' from 'int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1528,30): message : or       'unknown-type std::end(const _Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : Failed to specialize function template 'unknown-type std::end(const _Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : With the following template arguments:
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Container=int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xutility(1522,30): message : or       'unknown-type std::end(_Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : Failed to specialize function template 'unknown-type std::end(_Container &) noexcept(<expr>)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : With the following template arguments:
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : '_Container=int'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\initializer_list(60,35): message : or       'const _Elem *std::end(std::initializer_list<_Elem>) noexcept'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,26): message : 'const _Elem *std::end(std::initializer_list<_Elem>) noexcept': could not deduce template argument for 'std::initializer_list<_Elem>' from 'int'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(65,2): error C3536: '<begin>$L0': cannot be used before it is initialized
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(65,2): error C3536: '<end>$L0': cannot be used before it is initialized
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,35): error C2100: illegal indirection
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,35): error C2440: 'initializing': cannot convert from 'int' to 'const SceneNode::Ptr &'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,35): message : Reason: cannot convert from 'int' to 'const SceneNode::Ptr'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(64,35): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(66,8): error C2660: 'SceneNode::draw': function does not take 1 arguments
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,11): message : see declaration of 'SceneNode::draw'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.cpp(66,8): message : while trying to match the argument list '(Game::RenderContext)'
+  SpriteNode.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,25): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.hpp(15,39): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(17,18): error C2511: 'void SpriteNode::drawCurrent(Game::RenderContext) const': overloaded member function not found in 'SpriteNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(4,7): message : see declaration of 'SpriteNode'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(25,17): error C2660: 'ID3D12GraphicsCommandList::IASetVertexBuffers': function does not take 2 arguments
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\d3d12.h(5942,40): message : see declaration of 'ID3D12GraphicsCommandList::IASetVertexBuffers'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(25,17): message : while trying to match the argument list '(int, int)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(41,17): error C2660: 'ID3D12GraphicsCommandList::DrawIndexedInstanced': function does not take 3 arguments
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\d3d12.h(5802,40): message : see declaration of 'ID3D12GraphicsCommandList::DrawIndexedInstanced'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(41,17): message : while trying to match the argument list '()'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.cpp(50,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  State.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+  StateStack.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
   TitleState.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,42): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+  World.cpp
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,22): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,36): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,35): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(89,49): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,30): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(90,44): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Aircraft.hpp(23,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,34): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(51,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SpriteNode.h(12,48): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,27): error C2027: use of undefined type 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(17,7): message : see declaration of 'Game'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,41): error C2061: syntax error: identifier 'RenderContext'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.hpp(106,8): error C2079: 'Game::mWorld' uses undefined class 'World'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(27,13): error C2660: 'SceneNode::draw': function does not take 1 arguments
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\SceneNode.hpp(67,11): message : see declaration of 'SceneNode::draw'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(27,13): message : while trying to match the argument list '(Game::RenderContext)'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(46,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\DirectX12\A1\Starter\World.cpp(54,38): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating Code...

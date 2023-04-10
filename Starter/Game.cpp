@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "SceneNode.hpp"
 #include "State.hpp"
 #include "StateIdentifiers.hpp"
 #include "TitleState.hpp"
@@ -56,6 +57,8 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
+	mStateStack.pushState(States::Title);
+	//mStateStack.pushState(States::Loading);
 
 	return true;
 }
@@ -74,8 +77,12 @@ void Game::OnResize()
 void Game::Update(const GameTimer& gt)
 {
 	ProcessEvents();
-	mWorld.update(gt);
-	//UpdateCamera(gt);
+
+	mStateStack.update(gt);
+
+	//mWorld.update(gt);
+	
+
 
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
@@ -95,6 +102,10 @@ void Game::Update(const GameTimer& gt)
 	UpdateObjectCBs(gt);
 	UpdateMaterialCBs(gt);
 	UpdateMainPassCB(gt);
+
+	if(mStateStack.isEmpty()) {
+		PostQuitMessage(0);
+	}
 }
 
 void Game::Draw(const GameTimer& gt)
@@ -136,7 +147,14 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	mWorld.draw(mCommandList.Get(), mCurrFrameResource);
+	Game::RenderContext context;
+	context.cmdList = mCommandList.Get();
+	context.mCbvSrvDescriptorSize = mCbvSrvDescriptorSize;
+	context.mCurrFrameResource = mCurrFrameResource;
+	context.mSrvDescriptorHeap = mSrvDescriptorHeap;
+
+	mWorld.draw(context);
+	//mStateStack.draw();
 	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.
@@ -726,14 +744,4 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 		pointWrap, pointClamp,
 		linearWrap, linearClamp,
 		anisotropicWrap, anisotropicClamp };
-}
-
-ComPtr<ID3D12DescriptorHeap> Game::GetDescriptorHeap()
-{
-	return mSrvDescriptorHeap;
-}
-
-UINT Game::GetDescriptorHeapSize()
-{
-	return mCbvSrvDescriptorSize;
 }

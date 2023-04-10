@@ -49,7 +49,6 @@ struct RenderItem
 };
 
 class Game;
-
 struct Command;
 
 class SceneNode
@@ -65,7 +64,7 @@ public:
 	Ptr						detachChild(const SceneNode& node);
 
 	void					update(const GameTimer& gt);
-	void					draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
+	void					draw(Game::RenderContext context) const;
 	void					build();
 
 	XMFLOAT3				getWorldPosition() const;
@@ -87,8 +86,8 @@ private:
 	virtual void			updateCurrent(const GameTimer& gt);
 	void					updateChildren(const GameTimer& gt);
 
-	virtual void			drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
-	void					drawChildren(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const;
+	virtual void			drawCurrent(Game::RenderContext context) const;
+	void					drawChildren(Game::RenderContext context) const;
 	virtual void			buildCurrent();
 	void					buildChildren();
 
