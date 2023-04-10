@@ -56,6 +56,7 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
+	mStateStack.pushState(States::Game);
 
 	return true;
 }
@@ -74,7 +75,10 @@ void Game::OnResize()
 void Game::Update(const GameTimer& gt)
 {
 	ProcessEvents();
-	mWorld.update(gt);
+
+	mStateStack.update(gt);
+
+	//mWorld.update(gt);
 	//UpdateCamera(gt);
 
 	// Cycle through the circular frame resource array.

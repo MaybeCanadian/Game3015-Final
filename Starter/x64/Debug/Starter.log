@@ -1,9 +1,1 @@
-﻿  main.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
-  StateStack.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.cpp(14,44): warning C4227: anachronism used: qualifiers on reference are ignored
-  TitleState.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
-  Generating Code...
-  Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe
+﻿  Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe

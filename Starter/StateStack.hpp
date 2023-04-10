@@ -28,7 +28,7 @@ public:
 	template <typename T>
 	void				registerState(States::ID stateID);
 
-	void				update(GameTimer& const dt);
+	void				update(const GameTimer& dt);
 	void				draw(RenderContext context);
 	//void				handleEvent(const sf::Event& event);
 

@@ -13,7 +13,7 @@ GameState::GameState(StateStack& stack, Context context)
 
 void GameState::draw(RenderContext context)
 {
-	//mWorld.draw(cmdList, mCurrFrameResource);
+	mWorld.draw(context);
 }
 
 bool GameState::update(const GameTimer& dt)
