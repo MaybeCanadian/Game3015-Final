@@ -8,12 +8,6 @@
 
 #include <memory>
 
-
-namespace sf
-{
-	class RenderWindow;
-}
-
 class StateStack;
 class Player;
 class World;
@@ -37,7 +31,7 @@ public:
 	virtual				~State();
 
 	virtual void		draw() = 0;
-	virtual bool		update(GameTimer& const dt) = 0;
+	virtual bool		update(const GameTimer& dt) = 0;
 	//virtual bool		handleEvent(const sf::Event& event) = 0;
 
 
@@ -50,7 +44,7 @@ protected:
 
 
 private:
-	StateStack* mStack;
+	StateStack*			mStack;
 	Context				mContext;
 };
 

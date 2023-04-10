@@ -1,53 +1,15 @@
 ﻿  Game.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,42): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(32,36): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\GameState.hpp(20,42): warning C4227: anachronism used: qualifiers on reference are ignored
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(31,31): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'TitleState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\TitleState.hpp(7,7): message : see declaration of 'TitleState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(484,53): message : see reference to function template instantiation 'void StateStack::registerState<TitleState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'TitleState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\TitleState.hpp(7,7): message : see declaration of 'TitleState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'MenuState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\MenuState.hpp(6,7): message : see declaration of 'MenuState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(485,51): message : see reference to function template instantiation 'void StateStack::registerState<MenuState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'MenuState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\MenuState.hpp(6,7): message : see declaration of 'MenuState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'PauseState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\PauseState.hpp(6,7): message : see declaration of 'PauseState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(487,53): message : see reference to function template instantiation 'void StateStack::registerState<PauseState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'PauseState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\PauseState.hpp(6,7): message : see declaration of 'PauseState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): error C2259: 'LoadingState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\LoadingState.hpp(6,7): message : see declaration of 'LoadingState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(73,1): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\Game.cpp(488,57): message : see reference to function template instantiation 'void StateStack::registerState<LoadingState>(States::ID)' being compiled
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): error C2259: 'LoadingState': cannot instantiate abstract class
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\LoadingState.hpp(6,7): message : see declaration of 'LoadingState'
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : due to following members:
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\StateStack.hpp(72,26): message : 'bool State::update(GameTimer &)': is abstract
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,16): message : see declaration of 'State::update'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(31,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  GameState.cpp
+  LoadingState.cpp
+  main.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
+  MenuState.cpp
+  PauseState.cpp
+  SceneNode.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
   TitleState.cpp
-C:\Users\ecoff\source\repos\DirectX12\A1\Starter\State.hpp(40,42): warning C4227: anachronism used: qualifiers on reference are ignored
   Generating Code...
+  Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe

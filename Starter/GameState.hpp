@@ -17,13 +17,13 @@ public:
 	GameState(StateStack& stack, Context context);
 
 	virtual void		draw();
-	virtual bool		update(GameTimer& const dt);
+	virtual bool		update(const GameTimer& dt);
 	//virtual bool		handleEvent(const sf::Event& event);
 
 
 private:
 	World				mWorld;
-	Player& mPlayer;
+	Player&				mPlayer;
 };
 
 #endif // BOOK_GAMESTATE_HPP
