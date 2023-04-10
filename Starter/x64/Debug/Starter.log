@@ -1,2 +1,3 @@
-﻿  Player.cpp
+﻿  MenuState.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(35,54): warning C4305: 'argument': truncation from 'double' to 'float'
   Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe

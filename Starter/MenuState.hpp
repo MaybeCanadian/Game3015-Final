@@ -2,6 +2,8 @@
 #define BOOK_MENUSTATE_HPP
 
 #include "State.hpp"
+#include "World.hpp"
+#include "Player.hpp"
 
 class MenuState : public State
 {
@@ -10,10 +12,7 @@ public:
 
 	virtual void			draw(RenderContext context);
 	virtual bool			update(const GameTimer& dt);
-	virtual void		buildState();
-	//virtual bool			handleEvent(const sf::Event& event);
-
-	void					updateOptionText();
+	virtual void			buildState();
 
 
 private:
@@ -25,10 +24,8 @@ private:
 
 
 private:
-	/*sf::Sprite				mBackgroundSprite;
-
-	std::vector<sf::Text>	mOptions;
-	std::size_t				mOptionIndex;*/
+	Game*	mGame;
+	World	mWorld;
 };
 
 #endif // BOOK_MENUSTATE_HPP

@@ -38,7 +38,8 @@ bool Game::Initialize()
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
 	registerStates();
-	mStateStack.pushState(States::Game);
+	//mStateStack.pushState(States::Game);
+	mStateStack.pushState(States::Menu);
 
 	LoadTextures();
 	BuildRootSignature();
@@ -656,7 +657,7 @@ void Game::BuildMaterials()
 
 void Game::BuildRenderItems()
 {
-	mWorld.buildScene();
+	mWorld.buildRoot();
 
 	// All the render items are opaque.
 	for (auto& e : mAllRitems)

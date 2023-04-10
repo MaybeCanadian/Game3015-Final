@@ -15,6 +15,7 @@ public:
 	void								update(const GameTimer& gt);
 	void								draw(RenderContext context);
 	CommandQueue&						getCommandQueue();
+	void								buildRoot();
 	void								buildScene();
 	void								addToWorld(SceneNode::Ptr node);
 
