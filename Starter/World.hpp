@@ -6,12 +6,14 @@
 #include "CommandQueue.hpp"
 #include "Command.hpp"
 
+struct RenderContext;
+
 class World 
 {
 public:
 	explicit							World(Game* game);
 	void								update(const GameTimer& gt);
-	void								draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource);
+	void								draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context);
 	CommandQueue&						getCommandQueue();
 	void								buildScene();
 

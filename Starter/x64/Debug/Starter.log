@@ -1,15 +1,21 @@
-﻿  Game.cpp
+﻿  Aircraft.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\Aircraft.cpp(58,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  Game.cpp
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(31,31): warning C4305: 'argument': truncation from 'double' to 'float'
   GameState.cpp
-  LoadingState.cpp
-  main.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
-  MenuState.cpp
-  PauseState.cpp
   SceneNode.cpp
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
-  TitleState.cpp
+  SpriteNode.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\SpriteNode.cpp(53,54): warning C4267: '=': conversion from 'size_t' to 'UINT', possible loss of data
+  World.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\World.cpp(47,36): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\World.cpp(55,38): warning C4305: 'argument': truncation from 'double' to 'float'
+  main.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\StateStack.hpp(31,36): warning C4227: anachronism used: qualifiers on reference are ignored
   Generating Code...
   Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe

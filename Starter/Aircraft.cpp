@@ -23,7 +23,7 @@ void Aircraft::updateCurrent(const GameTimer& gt)
 	Entity::updateCurrent(gt);
 }
 
-void Aircraft::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
+void Aircraft::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context) const
 {	
 	UINT objCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(ObjectConstants));
 	UINT matCBByteSize = d3dUtil::CalcConstantBufferByteSize(sizeof(MaterialConstants));

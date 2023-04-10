@@ -14,7 +14,7 @@ void SpriteNode::updateCurrent(const GameTimer& gt)
 	}
 }
 
-void SpriteNode::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource) const
+void SpriteNode::drawCurrent(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context) const
 {
 	renderer->World = getTransform();
 	renderer->NumFramesDirty++;

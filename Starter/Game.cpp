@@ -136,7 +136,13 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
-	mWorld.draw(mCommandList.Get(), mCurrFrameResource);
+	RenderContext context;
+	context.cmdList = mCommandList.Get();
+	context.mCurrFrameResource = mCurrFrameResource;
+	context.mCbvSrvDescriptorSize = mCbvSrvDescriptorSize;
+	context.mSrvDescriptorHeap = mSrvDescriptorHeap;
+
+	mWorld.draw(mCommandList.Get(), mCurrFrameResource, context);
 	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.

@@ -4,6 +4,13 @@
 
 #include "StateStack.hpp"
 
+struct RenderContext {
+	ID3D12GraphicsCommandList* cmdList;
+	FrameResource* mCurrFrameResource;
+	UINT mCbvSrvDescriptorSize;
+	ComPtr<ID3D12DescriptorHeap> mSrvDescriptorHeap;
+};
+
 class Game : public D3DApp
 {
 public:

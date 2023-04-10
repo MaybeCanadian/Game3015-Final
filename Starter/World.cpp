@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include "Game.hpp"
 #include <iostream>
 
 World::World(Game* game)
@@ -22,9 +23,9 @@ void World::update(const GameTimer& gt)
 	mSceneGraph->update(gt);
 }
 
-void World::draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource)
+void World::draw(ID3D12GraphicsCommandList* cmdList, FrameResource* mCurrFrameResource, RenderContext context)
 {
-	mSceneGraph->draw(cmdList, mCurrFrameResource);
+	mSceneGraph->draw(cmdList, mCurrFrameResource, context);
 }
 
 CommandQueue& World::getCommandQueue()
