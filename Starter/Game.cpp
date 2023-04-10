@@ -12,7 +12,7 @@ const int gNumFrameResources = 3;
 Game::Game(HINSTANCE hInstance)
 	: D3DApp(hInstance)
 	, mWorld(this)
-	, mStateStack(State::Context(mWorld, mPlayer))
+	, mStateStack(State::Context(*this, mPlayer))
 {
 }
 
@@ -142,7 +142,9 @@ void Game::Draw(const GameTimer& gt)
 	context.mCbvSrvDescriptorSize = mCbvSrvDescriptorSize;
 	context.mSrvDescriptorHeap = mSrvDescriptorHeap;
 
-	mWorld.draw(context);
+	mStateStack.draw(context);
+
+	//mWorld.draw(context);
 	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.

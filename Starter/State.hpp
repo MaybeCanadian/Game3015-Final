@@ -10,7 +10,8 @@
 
 class StateStack;
 class Player;
-class World;
+class Game;
+struct RenderContext;
 
 class State
 {
@@ -19,9 +20,9 @@ public:
 
 	struct Context
 	{
-		Context(World& game, Player& player);
+		Context(Game& game, Player& player);
 
-		World* world;
+		Game* game;
 		Player* player;
 	};
 
@@ -30,7 +31,7 @@ public:
 	State(StateStack& stack, Context context);
 	virtual				~State();
 
-	virtual void		draw() = 0;
+	virtual void		draw(RenderContext context) = 0;
 	virtual bool		update(const GameTimer& dt) = 0;
 	//virtual bool		handleEvent(const sf::Event& event) = 0;
 

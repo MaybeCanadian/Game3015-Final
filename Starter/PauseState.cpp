@@ -1,5 +1,6 @@
 #pragma region step 3
 #include "PauseState.hpp"
+#include "Game.hpp"
 
 
 PauseState::PauseState(StateStack& stack, Context context)
@@ -8,7 +9,7 @@ PauseState::PauseState(StateStack& stack, Context context)
 
 }
 
-void PauseState::draw()
+void PauseState::draw(RenderContext context)
 {
 	/*sf::RenderWindow& window = *getContext().window;
 	window.setView(window.getDefaultView());

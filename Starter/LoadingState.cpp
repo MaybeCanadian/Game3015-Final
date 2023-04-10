@@ -1,5 +1,6 @@
 #pragma region step 5
 #include "LoadingState.hpp"
+#include "Game.hpp"
 
 
 LoadingState::LoadingState(StateStack& stack, Context context)
@@ -27,7 +28,7 @@ LoadingState::LoadingState(StateStack& stack, Context context)
 	////mLoadingTask.execute();
 }
 
-void LoadingState::draw()
+void LoadingState::draw(RenderContext context)
 {
 	/*sf::RenderWindow& window = *getContext().window;
 

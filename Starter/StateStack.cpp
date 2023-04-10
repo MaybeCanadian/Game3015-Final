@@ -1,4 +1,5 @@
 #include "StateStack.hpp"
+#include "Game.hpp"
 
 #include <cassert>
 
@@ -22,11 +23,11 @@ void StateStack::update(GameTimer& const dt)
 	applyPendingChanges();
 }
 
-void StateStack::draw()
+void StateStack::draw(RenderContext context)
 {
 	// Draw all active states from bottom to top
 	for (State::Ptr& state : mStack)
-		state->draw();
+		state->draw(context);
 }
 
 void StateStack::pushState(States::ID stateID)

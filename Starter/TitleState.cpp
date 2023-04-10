@@ -1,4 +1,5 @@
 #include "TitleState.hpp"
+#include "Game.hpp"
 
 TitleState::TitleState(StateStack& stack, Context context)
 	: State(stack, context)
@@ -14,7 +15,7 @@ TitleState::TitleState(StateStack& stack, Context context)
 	//mText.setPosition(context.window->getView().getSize() / 2.f);
 }
 
-void TitleState::draw()
+void TitleState::draw(RenderContext context)
 {
 	//sf::RenderWindow& window = *getContext().window;
 	//window.draw(mBackgroundSprite);

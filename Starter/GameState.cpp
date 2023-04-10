@@ -1,15 +1,17 @@
 #include "GameState.hpp"
+#include "Game.hpp"
 
 
 
 GameState::GameState(StateStack& stack, Context context)
 	: State(stack, context)
-	, mWorld(*context.world)
+	, mWorld(context.game)
 	, mPlayer(*context.player)
 {
+
 }
 
-void GameState::draw()
+void GameState::draw(RenderContext context)
 {
 	//mWorld.draw(cmdList, mCurrFrameResource);
 }

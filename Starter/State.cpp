@@ -1,9 +1,10 @@
 #include "State.hpp"
 #include "StateStack.hpp"
+#include "Game.hpp"
 
 
-State::Context::Context(World& world, Player& player)
-	: world(&world)
+State::Context::Context(Game& game, Player& player)
+	: game(&game)
 	, player(&player)
 {
 }

@@ -1,4 +1,5 @@
 #include "MenuState.hpp"
+#include "Game.hpp"
 
 MenuState::MenuState(StateStack& stack, Context context)
 	: State(stack, context)
@@ -28,7 +29,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 	//updateOptionText();
 }
 
-void MenuState::draw()
+void MenuState::draw(RenderContext context)
 {
 	/*sf::RenderWindow& window = *getContext().window;
 

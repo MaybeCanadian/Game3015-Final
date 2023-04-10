@@ -29,7 +29,7 @@ public:
 	void				registerState(States::ID stateID);
 
 	void				update(GameTimer& const dt);
-	void				draw();
+	void				draw(RenderContext context);
 	//void				handleEvent(const sf::Event& event);
 
 	void				pushState(States::ID stateID);
