@@ -36,7 +36,7 @@ void GameState::buildState()
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.5, 0.0);
 	mPlayerAircraft->setScale(0.75, 0.75, 0.75);
-	mPlayerAircraft->setVelocity(1.0f, 0.0f, 0.0f);
+	mPlayerAircraft->setVelocity(0.0f, 0.0f, 0.0f);
 	mWorld.addToWorld(std::move(player));
 
 	std::unique_ptr<Aircraft> enemy1(new Aircraft(Aircraft::Raptor, mGame));

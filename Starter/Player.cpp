@@ -49,7 +49,6 @@ void Player::handleRealTimeInput(CommandQueue& commands)
 		if (GetAsyncKeyState(pair.first) & 0x8000) {
 			auto found = mKeyBinding.find(pair.first);
 
-
 			if (found != mKeyBinding.end() && isRealTimeAction(found->second))
 
 				commands.push(mActionBinding[found->second]);

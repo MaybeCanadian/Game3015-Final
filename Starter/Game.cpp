@@ -91,9 +91,11 @@ void Game::OnResize()
 
 void Game::Update(const GameTimer& gt)
 {
-	ProcessEvents();
+	//ProcessEvents();
 
 	mStateStack.update(gt);
+
+	mCamera.UpdateViewMatrix();
 
 	//mWorld.update(gt);
 	//UpdateCamera(gt);
@@ -194,12 +196,7 @@ void Game::Draw(const GameTimer& gt)
 
 void Game::ProcessEvents()
 {
-	CommandQueue& commands = mWorld.getCommandQueue();
 
-	mPlayer.handleEvent(commands);
-	mPlayer.handleRealTimeInput(commands);
-
-	mCamera.UpdateViewMatrix();
 }
 
 void Game::OnMouseDown(WPARAM btnState, int x, int y)

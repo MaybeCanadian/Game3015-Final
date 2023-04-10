@@ -19,8 +19,8 @@ public:
 	Game& operator=(const Game& rhs) = delete;
 	~Game();
 
-	virtual bool Initialize()override;
-	void		RebuildItems();
+	virtual bool	Initialize()override;
+	void			RebuildItems();
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
