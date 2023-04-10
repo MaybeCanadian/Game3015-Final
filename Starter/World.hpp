@@ -16,6 +16,7 @@ public:
 	void								draw(RenderContext context);
 	CommandQueue&						getCommandQueue();
 	void								buildScene();
+	void								addToWorld(SceneNode::Ptr node);
 
 private:
 	CommandQueue						mCommandQueue;
@@ -35,11 +36,4 @@ private:
 
 	SceneNode*							mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
-
-	XMFLOAT4							mWorldBounds;
-	XMFLOAT2		    				mSpawnPosition;
-	float								mScrollSpeed;
-	PlayerAircraft*						mPlayerAircraft;
-	SpriteNode*							mBackground;
-	Aircraft*							mEnemy;
 };

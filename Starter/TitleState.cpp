@@ -37,6 +37,10 @@ bool TitleState::update(const GameTimer& dt)
 	return true;
 }
 
+void TitleState::buildState()
+{
+}
+
 //bool TitleState::handleEvent(const sf::Event& event)
 //{
 //	// If any key is pressed, trigger the next screen

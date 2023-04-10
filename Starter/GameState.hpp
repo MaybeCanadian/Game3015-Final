@@ -18,12 +18,22 @@ public:
 
 	virtual void		draw(RenderContext context);
 	virtual bool		update(const GameTimer& dt);
+	virtual void		buildState();
 	//virtual bool		handleEvent(const sf::Event& event);
 
 
 private:
+	Game*				mGame;
 	World				mWorld;
 	Player&				mPlayer;
+
+	XMFLOAT4							mWorldBounds;
+	XMFLOAT2		    				mSpawnPosition;
+	float								mScrollSpeed;
+
+	PlayerAircraft* mPlayerAircraft;
+	SpriteNode* mBackground;
+	Aircraft* mEnemy;
 };
 
 #endif // BOOK_GAMESTATE_HPP

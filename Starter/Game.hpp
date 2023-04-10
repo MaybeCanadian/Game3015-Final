@@ -20,6 +20,7 @@ public:
 	~Game();
 
 	virtual bool Initialize()override;
+	void		RebuildItems();
 private:
 	virtual void OnResize()override;
 	virtual void Update(const GameTimer& gt)override;
@@ -109,7 +110,5 @@ public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }
 	std::unordered_map<std::string, std::unique_ptr<Material>>& getMaterials() { return mMaterials; }
 	std::unordered_map<std::string, std::unique_ptr<MeshGeometry>>& getGeometries() { return mGeometries; }
-	ComPtr<ID3D12DescriptorHeap> GetDescriptorHeap();
-	UINT GetDescriptorHeapSize();
 
 };

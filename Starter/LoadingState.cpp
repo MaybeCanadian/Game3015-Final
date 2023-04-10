@@ -55,6 +55,10 @@ bool LoadingState::update(const GameTimer& dt)
 	return true;
 }
 
+void LoadingState::buildState()
+{
+}
+
 //bool LoadingState::handleEvent(const sf::Event& event)
 //{
 //	return true;

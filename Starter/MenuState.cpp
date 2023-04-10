@@ -45,6 +45,10 @@ bool MenuState::update(const GameTimer& dt)
 	return true;
 }
 
+void MenuState::buildState()
+{
+}
+
 //bool MenuState::handleEvent(const sf::Event& event)
 //{
 //	// The demonstration menu logic

@@ -30,6 +30,12 @@ void StateStack::draw(RenderContext context)
 		state->draw(context);
 }
 
+void StateStack::build()
+{
+	for (State::Ptr& state : mStack)
+		state->buildState();
+}
+
 void StateStack::pushState(States::ID stateID)
 {
 	mPendingList.push_back(PendingChange(Push, stateID));
@@ -66,14 +72,23 @@ void StateStack::applyPendingChanges()
 		{
 		case Push:
 			mStack.push_back(createState(change.stateID));
+
+
+			mContext.game->RebuildItems();
 			break;
 
 		case Pop:
 			mStack.pop_back();
+
+
+			mContext.game->RebuildItems();
 			break;
 
 		case Clear:
 			mStack.clear();
+
+
+			mContext.game->RebuildItems();
 			break;
 		}
 	}

@@ -31,6 +31,7 @@ public:
 	void				update(const GameTimer& dt);
 	void				draw(RenderContext context);
 	//void				handleEvent(const sf::Event& event);
+	void				build();
 
 	void				pushState(States::ID stateID);
 	void				popState();

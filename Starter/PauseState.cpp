@@ -28,6 +28,10 @@ bool PauseState::update(const GameTimer& dt)
 	return false;
 }
 
+void PauseState::buildState()
+{
+}
+
 //bool PauseState::handleEvent(const sf::Event& event)
 //{
 //	if (event.type != sf::Event::KeyPressed)

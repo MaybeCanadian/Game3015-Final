@@ -37,15 +37,20 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
+	registerStates();
+	mStateStack.pushState(States::Game);
+
 	LoadTextures();
 	BuildRootSignature();
 	BuildDescriptorHeaps();
 	BuildShadersAndInputLayout();
 	BuildShapeGeometry();
 	BuildMaterials();
+	BuildPSOs();
+
+	//The current objects matter
 	BuildRenderItems();
 	BuildFrameResources();
-	BuildPSOs();
 
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
@@ -55,10 +60,22 @@ bool Game::Initialize()
 	// Wait until initialization is complete.
 	FlushCommandQueue();
 
-	registerStates();
-	mStateStack.pushState(States::Game);
-
 	return true;
+}
+
+void Game::RebuildItems() {
+
+	//Clear old render Items
+	mAllRitems.clear();
+	mOpaqueRitems.clear();
+
+	//Make new render Items
+	mStateStack.build();
+	BuildRenderItems();
+
+	//Clear old Frame Resources
+	mFrameResources.clear();
+	BuildFrameResources();
 }
 
 void Game::OnResize()
@@ -738,14 +755,4 @@ std::array<const CD3DX12_STATIC_SAMPLER_DESC, 6> Game::GetStaticSamplers()
 		pointWrap, pointClamp,
 		linearWrap, linearClamp,
 		anisotropicWrap, anisotropicClamp };
-}
-
-ComPtr<ID3D12DescriptorHeap> Game::GetDescriptorHeap()
-{
-	return mSrvDescriptorHeap;
-}
-
-UINT Game::GetDescriptorHeapSize()
-{
-	return mCbvSrvDescriptorSize;
 }
