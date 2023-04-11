@@ -37,9 +37,7 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-	registerStates();
-	//mStateStack.pushState(States::Game);
-	mStateStack.pushState(States::Menu);
+
 
 	LoadTextures();
 	BuildRootSignature();
@@ -52,6 +50,7 @@ bool Game::Initialize()
 	//The current objects matter
 	BuildRenderItems();
 	BuildFrameResources();
+	//RebuildItems();
 
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
@@ -60,6 +59,10 @@ bool Game::Initialize()
 
 	// Wait until initialization is complete.
 	FlushCommandQueue();
+
+	registerStates();
+	//mStateStack.pushState(States::Game);
+	mStateStack.pushState(States::Menu);
 
 	return true;
 }
@@ -70,13 +73,16 @@ void Game::RebuildItems() {
 	mAllRitems.clear();
 	mOpaqueRitems.clear();
 
+
 	//Make new render Items
-	mStateStack.build();
+	
 	BuildRenderItems();
+	mStateStack.build();
 
 	//Clear old Frame Resources
 	mFrameResources.clear();
 	BuildFrameResources();
+
 }
 
 void Game::OnResize()
@@ -695,6 +701,16 @@ void Game::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::vector
 
 		cmdList->DrawIndexedInstanced(ri->IndexCount, 1, ri->StartIndexLocation, ri->BaseVertexLocation, 0);
 	}
+}
+
+Camera* Game::GetCamera()
+{
+	return &mCamera;
+}
+
+StateStack* Game::GetStateStack()
+{
+	return &mStateStack;
 }
 
 //step21

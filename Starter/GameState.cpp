@@ -32,6 +32,10 @@ bool GameState::update(const GameTimer& dt)
 
 void GameState::buildState()
 {
+	//Camera* camera = mGame->GetCamera();
+	//camera->SetPosition(0, 2, -2.2);
+	//camera->Pitch(65 * 3.14 / 360);
+
 	std::unique_ptr<PlayerAircraft> player(new PlayerAircraft(mGame));
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.5, 0.0);
