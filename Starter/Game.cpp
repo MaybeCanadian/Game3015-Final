@@ -48,8 +48,8 @@ bool Game::Initialize()
 	BuildPSOs();
 
 	//The current objects matter
-	BuildRenderItems();
-	BuildFrameResources();
+	//BuildRenderItems();
+	//BuildFrameResources();
 	//RebuildItems();
 
 	// Execute the initialization commands.
@@ -61,7 +61,7 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
-	//mStateStack.pushState(States::Game);
+	mStateStack.pushState(States::Game);
 	mStateStack.pushState(States::Menu);
 
 	return true;
@@ -75,14 +75,12 @@ void Game::RebuildItems() {
 
 
 	//Make new render Items
-	
 	BuildRenderItems();
 	mStateStack.build();
 
 	//Clear old Frame Resources
 	mFrameResources.clear();
 	BuildFrameResources();
-
 }
 
 void Game::OnResize()
@@ -280,7 +278,6 @@ void Game::OnKeyboardInput(const GameTimer& gt)
 			//mCamera.Strafe(10.0f * dt);
 		}
 	}
-
 
 	mCamera.UpdateViewMatrix();
 }
@@ -663,7 +660,7 @@ void Game::BuildMaterials()
 
 void Game::BuildRenderItems()
 {
-	mWorld.buildRoot();
+	//mWorld.buildRoot();
 
 	// All the render items are opaque.
 	for (auto& e : mAllRitems)

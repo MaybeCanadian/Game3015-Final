@@ -14,26 +14,30 @@ StateStack::StateStack(State::Context context)
 void StateStack::update(const GameTimer& dt)
 {
 	// Iterate from top to bottom, stop as soon as update() returns false
-	for (auto itr = mStack.rbegin(); itr != mStack.rend(); ++itr)
-	{
-		if (!(*itr)->update(dt))
-			break;
-	}
+	//for (auto itr = mStack.rbegin(); itr != mStack.rend(); ++itr)
+	//{
+	//	if (!(*itr)->update(dt))
+	//		break;
+	//}
+	if (!mStack.empty())
+		mStack.back()->update(dt);
 
 	applyPendingChanges();
 }
 
 void StateStack::draw(RenderContext context)
 {
+	mStack.back()->draw(context);
 	// Draw all active states from bottom to top
-	for (State::Ptr& state : mStack)
-		state->draw(context);
+	//for (State::Ptr& state : mStack)
+	//	state->draw(context);
 }
 
 void StateStack::build()
 {
-	for (State::Ptr& state : mStack)
-		state->buildState();
+	mStack.back()->buildState();
+	//for (State::Ptr& state : mStack)
+	//	state->buildState();
 }
 
 void StateStack::pushState(States::ID stateID)
