@@ -1,16 +1,6 @@
-﻿  GameState.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\GameState.cpp(62,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\GameState.cpp(70,38): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\GameState.cpp(85,33): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\GameState.cpp(86,26): warning C4305: 'argument': truncation from 'double' to 'float'
-  MenuState.cpp
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(50,30): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(68,38): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(73,37): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(74,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(79,40): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(80,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(84,35): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\ecoff\source\repos\Game3015-Final\Starter\MenuState.cpp(85,26): warning C4305: 'argument': truncation from 'double' to 'float'
-  Generating Code...
+﻿  TitleState.cpp
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\TitleState.cpp(24,27): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\TitleState.cpp(40,38): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\TitleState.cpp(44,35): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\ecoff\source\repos\Game3015-Final\Starter\TitleState.cpp(45,26): warning C4305: 'argument': truncation from 'double' to 'float'
   Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe

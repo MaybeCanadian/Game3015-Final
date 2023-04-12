@@ -2,6 +2,8 @@
 #define BOOK_TITLESTATE_HPP
 
 #include "State.hpp"
+#include "World.hpp"
+#include "Player.hpp"
 
 
 class TitleState : public State
@@ -17,7 +19,8 @@ public:
 
 
 private:
-	bool menuPressed = false;
+	Game* mGame;
+	World mWorld;
 };
 
 #endif // BOOK_TITLESTATE_HPP
