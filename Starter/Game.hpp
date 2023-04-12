@@ -108,6 +108,7 @@ private:
 	Player	mPlayer;
 
 	StateStack mStateStack;
+	bool pressed = false;
 
 public:
 	std::vector<std::unique_ptr<RenderItem>>& getRenderItems() { return mAllRitems; }

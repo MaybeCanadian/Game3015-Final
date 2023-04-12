@@ -51,10 +51,13 @@ void Aircraft::drawCurrent(RenderContext context) const
 	context.cmdList->SetGraphicsRootConstantBufferView(3, matCBAddress);
 
 	context.cmdList->DrawIndexedInstanced(renderer->IndexCount, 1, renderer->StartIndexLocation, renderer->BaseVertexLocation, 0);
+
 }
 
 void Aircraft::buildCurrent()
 {
+	renderer = nullptr;
+
 	auto render = std::make_unique<RenderItem>();
 	renderer = render.get();
 	renderer->World = getTransform();

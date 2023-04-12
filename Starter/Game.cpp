@@ -43,12 +43,11 @@ bool Game::Initialize()
 	BuildShadersAndInputLayout();
 	BuildShapeGeometry();
 	BuildMaterials();
+
 	BuildPSOs();
 
-	//The current objects matter
-	//BuildRenderItems();
-	//BuildFrameResources();
-	//RebuildItems();
+	BuildRenderItems();
+	BuildFrameResources();
 
 	// Execute the initialization commands.
 	ThrowIfFailed(mCommandList->Close());
@@ -59,7 +58,6 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
-	//mStateStack.pushState(States::Game);
 	mStateStack.pushState(States::Game);
 
 	return true;
@@ -67,18 +65,19 @@ bool Game::Initialize()
 
 void Game::RebuildItems()
 {
-	D3DApp::OnResize();
+	FlushCommandQueue();
 
 	mAllRitems.clear();
-
-	mCurrFrameResourceIndex = 0;
 
 	mStateStack.build();
 
 	BuildRenderItems();
 
-	BuildFrameResources();
+	for (int i = 0; i < gNumFrameResources; i++) {
+		mCurrFrameResource = mFrameResources[i].get();
 
+		mCurrFrameResource->ObjectCB = std::make_unique<UploadBuffer<ObjectConstants>>(md3dDevice.Get(), (UINT)mAllRitems.size(), true);
+	}
 }
 
 void Game::OnResize()
@@ -96,13 +95,18 @@ void Game::Update(const GameTimer& gt)
 {
 	//ProcessEvents();
 
+	if (GetAsyncKeyState('V') & 0x8000 && pressed == false)
+	{
+		mStateStack.pushState(States::Game);
+		pressed = true;
+	}
+	else {
+		pressed = false;
+	}
+
 	mStateStack.update(gt);
 
 	mCamera.UpdateViewMatrix();
-
-	//mWorld.update(gt);
-	//UpdateCamera(gt);
-
 	// Cycle through the circular frame resource array.
 	mCurrFrameResourceIndex = (mCurrFrameResourceIndex + 1) % gNumFrameResources;
 	mCurrFrameResource = mFrameResources[mCurrFrameResourceIndex].get();
@@ -162,16 +166,13 @@ void Game::Draw(const GameTimer& gt)
 	auto passCB = mCurrFrameResource->PassCB->Resource();
 	mCommandList->SetGraphicsRootConstantBufferView(2, passCB->GetGPUVirtualAddress());
 
+
 	RenderContext context;
 	context.cmdList = mCommandList.Get();
 	context.mCurrFrameResource = mCurrFrameResource;
 	context.mCbvSrvDescriptorSize = mCbvSrvDescriptorSize;
 	context.mSrvDescriptorHeap = mSrvDescriptorHeap;
-
 	mStateStack.draw(context);
-
-	//mWorld.draw(context);
-	//DrawRenderItems(mCommandList.Get(), mOpaqueRitems);
 
 	// Indicate a state transition on the resource usage.
 	mCommandList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(CurrentBackBuffer(),
@@ -616,6 +617,7 @@ void Game::BuildPSOs()
 void Game::BuildFrameResources()
 {
 	mFrameResources.clear();
+	mCurrFrameResourceIndex = 0;
 
 	for (int i = 0; i < gNumFrameResources; ++i)
 	{
@@ -661,6 +663,8 @@ void Game::BuildMaterials()
 void Game::BuildRenderItems()
 {
 	mOpaqueRitems.clear();
+
+	mWorld.buildRoot();
 
 	for (auto& e : mAllRitems)
 		mOpaqueRitems.push_back(e.get());
