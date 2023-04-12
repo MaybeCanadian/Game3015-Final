@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Game 3015 A2: Aircraft Class Reference</title>
+<title>Game 3015 - Final: Aircraft Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Game 3015 A2
+   <div id="projectname">Game 3015 - Final
    </div>
   </td>
  </tr>
@@ -119,6 +119,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setVelocity</b> (floa
 <tr class="memitem:af4fcc5c9f7e9d705502269444ef3eca3 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="af4fcc5c9f7e9d705502269444ef3eca3" name="af4fcc5c9f7e9d705502269444ef3eca3"></a>
 XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getVelocity</b> () const</td></tr>
 <tr class="separator:af4fcc5c9f7e9d705502269444ef3eca3 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efe8c9821dc44341471961150a53672 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="a8efe8c9821dc44341471961150a53672" name="a8efe8c9821dc44341471961150a53672"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setAcceleration</b> (XMFLOAT3 accel)</td></tr>
+<tr class="separator:a8efe8c9821dc44341471961150a53672 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84bb05b4c4cfb3b33775087345178c21 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="a84bb05b4c4cfb3b33775087345178c21" name="a84bb05b4c4cfb3b33775087345178c21"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>getAcceleration</b> ()</td></tr>
+<tr class="separator:a84bb05b4c4cfb3b33775087345178c21 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af104548e2a2730ba7836544ad57aa5e0 inherit pub_methods_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="af104548e2a2730ba7836544ad57aa5e0" name="af104548e2a2730ba7836544ad57aa5e0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>accelerate</b> (XMFLOAT3 velocity, const GameTimer &amp;)</td></tr>
 <tr class="separator:af104548e2a2730ba7836544ad57aa5e0 inherit pub_methods_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +146,9 @@ Ptr&#160;</td><td class="memItemRight" valign="bottom"><b>detachChild</b> (const
 <tr class="memitem:a858b7a088c0a2d01aaa90baf05d58d08 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a858b7a088c0a2d01aaa90baf05d58d08" name="a858b7a088c0a2d01aaa90baf05d58d08"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const GameTimer &amp;gt)</td></tr>
 <tr class="separator:a858b7a088c0a2d01aaa90baf05d58d08 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b796f0634bfc07290cb65af5be49efc inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a8b796f0634bfc07290cb65af5be49efc" name="a8b796f0634bfc07290cb65af5be49efc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (ID3D12GraphicsCommandList *cmdList, <a class="el" href="struct_frame_resource.html">FrameResource</a> *mCurrFrameResource) const</td></tr>
-<tr class="separator:a8b796f0634bfc07290cb65af5be49efc inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8461f7c1c13dae59ce2fc106b60f74a0 inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a8461f7c1c13dae59ce2fc106b60f74a0" name="a8461f7c1c13dae59ce2fc106b60f74a0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>draw</b> (<a class="el" href="struct_render_context.html">RenderContext</a> context) const</td></tr>
+<tr class="separator:a8461f7c1c13dae59ce2fc106b60f74a0 inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ca883a91d8c45004a0786330548d8f inherit pub_methods_class_scene_node"><td class="memItemLeft" align="right" valign="top"><a id="a67ca883a91d8c45004a0786330548d8f" name="a67ca883a91d8c45004a0786330548d8f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>build</b> ()</td></tr>
 <tr class="separator:a67ca883a91d8c45004a0786330548d8f inherit pub_methods_class_scene_node"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,8 +190,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>onCommand</b> (const 
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:aca42bd5bcaeac91ae9356a0c211dc1a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aircraft.html#aca42bd5bcaeac91ae9356a0c211dc1a2">updateCurrent</a> (const GameTimer &amp;gt)</td></tr>
 <tr class="separator:aca42bd5bcaeac91ae9356a0c211dc1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab660387fba72df1695cf3c7ae5befb68"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aircraft.html#ab660387fba72df1695cf3c7ae5befb68">drawCurrent</a> (ID3D12GraphicsCommandList *cmdList, <a class="el" href="struct_frame_resource.html">FrameResource</a> *mCurrFrameResource) const</td></tr>
-<tr class="separator:ab660387fba72df1695cf3c7ae5befb68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e20b27d812fdd8a2f5334c51b1c7cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aircraft.html#ad5e20b27d812fdd8a2f5334c51b1c7cc">drawCurrent</a> (<a class="el" href="struct_render_context.html">RenderContext</a> context) const</td></tr>
+<tr class="separator:ad5e20b27d812fdd8a2f5334c51b1c7cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dbd6abf6e74a25225a5e839eeb75732"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aircraft.html#a7dbd6abf6e74a25225a5e839eeb75732">buildCurrent</a> ()</td></tr>
 <tr class="separator:a7dbd6abf6e74a25225a5e839eeb75732"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d526464aecacd8a2ef202badc417db"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_aircraft.html#a75d526464aecacd8a2ef202badc417db">GetCategory</a> () const</td></tr>
@@ -213,6 +219,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a15aa77787228598dfa35f5f822695c43 inherit pub_attribs_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="a15aa77787228598dfa35f5f822695c43" name="a15aa77787228598dfa35f5f822695c43"></a>
 XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mVelocity</b></td></tr>
 <tr class="separator:a15aa77787228598dfa35f5f822695c43 inherit pub_attribs_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc inherit pub_attribs_class_entity"><td class="memItemLeft" align="right" valign="top"><a id="aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc" name="aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc"></a>
+XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mAcceleration</b></td></tr>
+<tr class="separator:aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc inherit pub_attribs_class_entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a7dbd6abf6e74a25225a5e839eeb75732" name="a7dbd6abf6e74a25225a5e839eeb75732"></a>
@@ -242,8 +251,8 @@ XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mVelocity</b></td
 
 </div>
 </div>
-<a id="ab660387fba72df1695cf3c7ae5befb68" name="ab660387fba72df1695cf3c7ae5befb68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab660387fba72df1695cf3c7ae5befb68">&#9670;&#160;</a></span>drawCurrent()</h2>
+<a id="ad5e20b27d812fdd8a2f5334c51b1c7cc" name="ad5e20b27d812fdd8a2f5334c51b1c7cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e20b27d812fdd8a2f5334c51b1c7cc">&#9670;&#160;</a></span>drawCurrent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,19 +263,9 @@ XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mVelocity</b></td
         <tr>
           <td class="memname">void Aircraft::drawCurrent </td>
           <td>(</td>
-          <td class="paramtype">ID3D12GraphicsCommandList *&#160;</td>
-          <td class="paramname"><em>cmdList</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_frame_resource.html">FrameResource</a> *&#160;</td>
-          <td class="paramname"><em>mCurrFrameResource</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
+          <td class="paramtype"><a class="el" href="struct_render_context.html">RenderContext</a>&#160;</td>
+          <td class="paramname"><em>context</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -336,8 +335,8 @@ XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><b>mVelocity</b></td
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/ecoff/source/repos/DirectX12/A1/Starter/<a class="el" href="_aircraft_8hpp_source.html">Aircraft.hpp</a></li>
-<li>C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Aircraft.cpp</li>
+<li>C:/Users/ecoff/source/repos/Game3015-Final/Starter/<a class="el" href="_aircraft_8hpp_source.html">Aircraft.hpp</a></li>
+<li>C:/Users/ecoff/source/repos/Game3015-Final/Starter/Aircraft.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

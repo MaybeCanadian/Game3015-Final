@@ -1,0 +1,32 @@
+\hypertarget{_title_state_8hpp_source}{}\doxysection{Title\+State.\+hpp}
+\label{_title_state_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/TitleState.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/TitleState.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOOK\_TITLESTATE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BOOK\_TITLESTATE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}State.hpp"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}World.hpp"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}Player.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_title_state}{TitleState}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_state}{State}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_title_state}{TitleState}}(\mbox{\hyperlink{class_state_stack}{StateStack}}\&\ stack,\ \mbox{\hyperlink{struct_state_1_1_context}{Context}}\ context);}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ draw(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ update(\textcolor{keyword}{const}\ GameTimer\&\ dt);}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ OnKeyDown(\textcolor{keywordtype}{int}\ key)\textcolor{keyword}{override};}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ buildState();}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ setUpState();}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}*\ mGame;}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_world}{World}}\ mWorld;}
+\DoxyCodeLine{00024\ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOOK\_TITLESTATE\_HPP}}
+
+\end{DoxyCode}

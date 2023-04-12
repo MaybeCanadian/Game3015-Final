@@ -1,0 +1,29 @@
+\hypertarget{_text_node_8hpp_source}{}\doxysection{Text\+Node.\+hpp}
+\label{_text_node_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/TextNode.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/TextNode.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ "{}SceneNode.hpp"{}}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_text_node}{TextNode}}\ :}
+\DoxyCodeLine{00005\ \ \ \ \ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_scene_node}{SceneNode}}}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{enum}\ Type\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \ \ \ \ TitleText,\ }
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ PauseImage,}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ PauseText,}
+\DoxyCodeLine{00012\ \ \ \ \ \};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_text_node}{TextNode}}(\mbox{\hyperlink{class_game}{Game}}*\ game,\ Type\ type);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ drawCurrent(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ buildCurrent();}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::string\ mSprite;}
+\DoxyCodeLine{00023\ \};}
+
+\end{DoxyCode}

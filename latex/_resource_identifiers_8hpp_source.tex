@@ -1,0 +1,43 @@
+\hypertarget{_resource_identifiers_8hpp_source}{}\doxysection{Resource\+Identifiers.\+hpp}
+\label{_resource_identifiers_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/ResourceIdentifiers.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/ResourceIdentifiers.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BOOK\_RESOURCEIDENTIFIERS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BOOK\_RESOURCEIDENTIFIERS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{namespace\ }sf}
+\DoxyCodeLine{00006\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keyword}{class\ }Texture;}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keyword}{class\ }Font;}
+\DoxyCodeLine{00009\ \}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }Textures}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum}\ ID}
+\DoxyCodeLine{00014\ \ \ \ \ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ Eagle,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ Raptor,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Desert,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ TitleScreen,}
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ \}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{namespace\ }Fonts}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{enum}\ ID}
+\DoxyCodeLine{00025\ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ Main,}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Forward\ declaration\ and\ a\ few\ type\ definitions}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Resource,\ \textcolor{keyword}{typename}\ Identifier>}
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_resource_holder}{ResourceHolder}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_resource_holder}{ResourceHolder<sf::Texture,\ Textures::ID>}}\ \ \mbox{\hyperlink{class_resource_holder}{TextureHolder}};}
+\DoxyCodeLine{00035\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_resource_holder}{ResourceHolder<sf::Font,\ Fonts::ID>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_resource_holder}{FontHolder}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BOOK\_RESOURCEIDENTIFIERS\_HPP}}
+
+\end{DoxyCode}

@@ -1,5 +1,5 @@
 \hypertarget{_scene_node_8hpp_source}{}\doxysection{Scene\+Node.\+hpp}
-\label{_scene_node_8hpp_source}\index{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/SceneNode.hpp@{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/SceneNode.hpp}}
+\label{_scene_node_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/SceneNode.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/SceneNode.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -53,60 +53,61 @@
 \DoxyCodeLine{00049\ \};}
 \DoxyCodeLine{00050\ }
 \DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_game}{Game}};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_command}{Command}};}
-\DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_node}{SceneNode}}}
-\DoxyCodeLine{00056\ \{}
-\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{typedef}\ std::unique\_ptr<SceneNode>\ Ptr;}
-\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_render_context}{RenderContext}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_command}{Command}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_node}{SceneNode}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{typedef}\ std::unique\_ptr<SceneNode>\ Ptr;}
 \DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_scene_node}{SceneNode}}(\mbox{\hyperlink{class_game}{Game}}*\ game);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachChild(Ptr\ child);}
-\DoxyCodeLine{00065\ \ \ \ \ Ptr\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ detachChild(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_scene_node}{SceneNode}}\&\ node);}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
-\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ draw(ID3D12GraphicsCommandList*\ cmdList,\ \mbox{\hyperlink{struct_frame_resource}{FrameResource}}*\ mCurrFrameResource)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build();}
-\DoxyCodeLine{00070\ }
-\DoxyCodeLine{00071\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldPosition()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setPosition(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
-\DoxyCodeLine{00073\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldRotation()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setWorldRotation(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
-\DoxyCodeLine{00075\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldScale()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setScale(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
-\DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \ \ XMFLOAT4X4\ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldTransform()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00079\ \ \ \ \ XMFLOAT4X4\ \ \ \ \ \ \ \ \ \ \ \ \ \ getTransform()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00080\ }
-\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ move(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
-\DoxyCodeLine{00082\ }
-\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ GetCategory()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onCommand(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_command}{Command}}\&\ command,\ \textcolor{keyword}{const}\ GameTimer\&\ dt);}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updateChildren(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ drawCurrent(ID3D12GraphicsCommandList*\ cmdList,\ \mbox{\hyperlink{struct_frame_resource}{FrameResource}}*\ mCurrFrameResource)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawChildren(ID3D12GraphicsCommandList*\ cmdList,\ \mbox{\hyperlink{struct_frame_resource}{FrameResource}}*\ mCurrFrameResource)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ buildCurrent();}
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buildChildren();}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00095\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game;}
-\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{struct_render_item}{RenderItem}}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer;}
-\DoxyCodeLine{00098\ }
-\DoxyCodeLine{00099\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00100\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldPosition;}
-\DoxyCodeLine{00101\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldRotation;}
-\DoxyCodeLine{00102\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldScaling;}
-\DoxyCodeLine{00103\ \ \ \ \ std::vector<Ptr>\ \ \ \ \ \ \ \ mChildren;}
-\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_scene_node}{SceneNode}}*\ \ \ \ \ \ \ \ \ \ \ \ \ mParent;}
-\DoxyCodeLine{00105\ \};}
-\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_scene_node}{SceneNode}}(\mbox{\hyperlink{class_game}{Game}}*\ game);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ attachChild(Ptr\ child);}
+\DoxyCodeLine{00066\ \ \ \ \ Ptr\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ detachChild(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_scene_node}{SceneNode}}\&\ node);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ update(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ draw(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ build();}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldPosition()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setPosition(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00074\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldRotation()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setWorldRotation(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00076\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldScale()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setScale(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ XMFLOAT4X4\ \ \ \ \ \ \ \ \ \ \ \ \ \ getWorldTransform()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ XMFLOAT4X4\ \ \ \ \ \ \ \ \ \ \ \ \ \ getTransform()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ move(\textcolor{keywordtype}{float}\ x,\ \textcolor{keywordtype}{float}\ y,\ \textcolor{keywordtype}{float}\ z);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ GetCategory()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ onCommand(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_command}{Command}}\&\ command,\ \textcolor{keyword}{const}\ GameTimer\&\ dt);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updateChildren(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ drawCurrent(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ drawChildren(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ buildCurrent();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buildChildren();}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_game}{Game}}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ game;}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{struct_render_item}{RenderItem}}*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ renderer;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldPosition;}
+\DoxyCodeLine{00102\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldRotation;}
+\DoxyCodeLine{00103\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mWorldScaling;}
+\DoxyCodeLine{00104\ \ \ \ \ std::vector<Ptr>\ \ \ \ \ \ \ \ mChildren;}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_scene_node}{SceneNode}}*\ \ \ \ \ \ \ \ \ \ \ \ \ mParent;}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
 
 \end{DoxyCode}

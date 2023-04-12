@@ -27,6 +27,12 @@ void {\bfseries set\+Velocity} (float vx, float vy, float vz)
 \mbox{\Hypertarget{class_entity_af4fcc5c9f7e9d705502269444ef3eca3}\label{class_entity_af4fcc5c9f7e9d705502269444ef3eca3}} 
 XMFLOAT3 {\bfseries get\+Velocity} () const
 \item 
+\mbox{\Hypertarget{class_entity_a8efe8c9821dc44341471961150a53672}\label{class_entity_a8efe8c9821dc44341471961150a53672}} 
+void {\bfseries set\+Acceleration} (XMFLOAT3 accel)
+\item 
+\mbox{\Hypertarget{class_entity_a84bb05b4c4cfb3b33775087345178c21}\label{class_entity_a84bb05b4c4cfb3b33775087345178c21}} 
+XMFLOAT3 {\bfseries get\+Acceleration} ()
+\item 
 \mbox{\Hypertarget{class_entity_af104548e2a2730ba7836544ad57aa5e0}\label{class_entity_af104548e2a2730ba7836544ad57aa5e0}} 
 void {\bfseries accelerate} (XMFLOAT3 velocity, const Game\+Timer \&)
 \item 
@@ -50,8 +56,8 @@ Ptr {\bfseries detach\+Child} (const \mbox{\hyperlink{class_scene_node}{Scene\+N
 \mbox{\Hypertarget{class_scene_node_a858b7a088c0a2d01aaa90baf05d58d08}\label{class_scene_node_a858b7a088c0a2d01aaa90baf05d58d08}} 
 void {\bfseries update} (const Game\+Timer \&gt)
 \item 
-\mbox{\Hypertarget{class_scene_node_a8b796f0634bfc07290cb65af5be49efc}\label{class_scene_node_a8b796f0634bfc07290cb65af5be49efc}} 
-void {\bfseries draw} (ID3\+D12\+Graphics\+Command\+List $\ast$cmd\+List, \mbox{\hyperlink{struct_frame_resource}{Frame\+Resource}} $\ast$m\+Curr\+Frame\+Resource) const
+\mbox{\Hypertarget{class_scene_node_a8461f7c1c13dae59ce2fc106b60f74a0}\label{class_scene_node_a8461f7c1c13dae59ce2fc106b60f74a0}} 
+void {\bfseries draw} (\mbox{\hyperlink{struct_render_context}{Render\+Context}} context) const
 \item 
 \mbox{\Hypertarget{class_scene_node_a67ca883a91d8c45004a0786330548d8f}\label{class_scene_node_a67ca883a91d8c45004a0786330548d8f}} 
 void {\bfseries build} ()
@@ -101,6 +107,9 @@ typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_scene_node}{Scene\+Node
 \item 
 \mbox{\Hypertarget{class_entity_a15aa77787228598dfa35f5f822695c43}\label{class_entity_a15aa77787228598dfa35f5f822695c43}} 
 XMFLOAT3 {\bfseries m\+Velocity}
+\item 
+\mbox{\Hypertarget{class_entity_aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc}\label{class_entity_aa9daf0fd6e2de6e9f2fb13f5c0cd3ffc}} 
+XMFLOAT3 {\bfseries m\+Acceleration}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene_node}{Scene\+Node}}}
 \begin{DoxyCompactItemize}
@@ -115,5 +124,5 @@ XMFLOAT3 {\bfseries m\+Velocity}
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-C\+:/\+Users/ecoff/source/repos/\+Direct\+X12/\+A1/\+Starter/Sprite\+Node.\+h\item 
-C\+:/\+Users/ecoff/source/repos/\+Direct\+X12/\+A1/\+Starter/Sprite\+Node.\+cpp\end{DoxyCompactItemize}
+C\+:/\+Users/ecoff/source/repos/\+Game3015-\/\+Final/\+Starter/Sprite\+Node.\+h\item 
+C\+:/\+Users/ecoff/source/repos/\+Game3015-\/\+Final/\+Starter/Sprite\+Node.\+cpp\end{DoxyCompactItemize}

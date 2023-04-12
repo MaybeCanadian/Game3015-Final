@@ -1,5 +1,5 @@
 \hypertarget{_entity_8hpp_source}{}\doxysection{Entity.\+hpp}
-\label{_entity_8hpp_source}\index{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Entity.hpp@{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Entity.hpp}}
+\label{_entity_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/Entity.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/Entity.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -13,14 +13,17 @@
 \DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setVelocity(XMFLOAT3\ velocity);}
 \DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setVelocity(\textcolor{keywordtype}{float}\ vx,\ \textcolor{keywordtype}{float}\ vy,\ \textcolor{keywordtype}{float}\ vz);}
 \DoxyCodeLine{00011\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ getVelocity()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accelerate(XMFLOAT3\ velocity,\ \textcolor{keyword}{const}\ GameTimer\&);}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accelerate(\textcolor{keywordtype}{float}\ vx,\ \textcolor{keywordtype}{float}\ vy,\ \textcolor{keywordtype}{float}\ vz,\ \textcolor{keyword}{const}\ GameTimer\&);}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setAcceleration(XMFLOAT3\ accel);}
+\DoxyCodeLine{00013\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ \ \ \ \ getAcceleration();}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accelerate(XMFLOAT3\ velocity,\ \textcolor{keyword}{const}\ GameTimer\&);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ accelerate(\textcolor{keywordtype}{float}\ vx,\ \textcolor{keywordtype}{float}\ vy,\ \textcolor{keywordtype}{float}\ vz,\ \textcolor{keyword}{const}\ GameTimer\&);}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ mVelocity;}
-\DoxyCodeLine{00019\ \};}
-\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ mVelocity;}
+\DoxyCodeLine{00021\ \ \ \ \ XMFLOAT3\ \ \ \ \ \ \ \ mAcceleration;}
+\DoxyCodeLine{00022\ \};}
+\DoxyCodeLine{00023\ }
 
 \end{DoxyCode}

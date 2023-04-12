@@ -1,0 +1,117 @@
+\hypertarget{class_loading_state}{}\doxysection{Loading\+State Class Reference}
+\label{class_loading_state}\index{LoadingState@{LoadingState}}
+Inheritance diagram for Loading\+State\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_loading_state}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}\label{class_loading_state_a6830cacada1f9c215f913d31aa1805cf}} 
+{\bfseries Loading\+State} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context)
+\item 
+virtual void \mbox{\hyperlink{class_loading_state_a54deea621d36140c3dd5b49988095254}{draw}} (\mbox{\hyperlink{struct_render_context}{Render\+Context}} context)
+\item 
+virtual bool \mbox{\hyperlink{class_loading_state_ac64a19858e5701f6fbb49c6c7df3c39a}{update}} (const Game\+Timer \&dt)
+\item 
+virtual void \mbox{\hyperlink{class_loading_state_ad67173227cab48ec9305b5050f742f41}{build\+State}} ()
+\item 
+virtual void \mbox{\hyperlink{class_loading_state_aa8720555e74f7fd4c6467ce4fa8b7631}{set\+Up\+State}} ()
+\item 
+\mbox{\Hypertarget{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}\label{class_loading_state_a28bee93e7f9818084af8be6b31ee0ba4}} 
+void {\bfseries set\+Completion} (float percent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_afede488ff3c1b264bbd07f8aeead84a7}\label{class_state_afede488ff3c1b264bbd07f8aeead84a7}} 
+{\bfseries State} (\mbox{\hyperlink{class_state_stack}{State\+Stack}} \&stack, \mbox{\hyperlink{struct_state_1_1_context}{Context}} context)
+\item 
+\mbox{\Hypertarget{class_state_aae98ef45ae4743adfe729237d260fbf1}\label{class_state_aae98ef45ae4743adfe729237d260fbf1}} 
+virtual void {\bfseries draw} (\mbox{\hyperlink{struct_render_context}{Render\+Context}} context)=0
+\item 
+\mbox{\Hypertarget{class_state_ac8c26dce51f1979366b5a8ae3a220067}\label{class_state_ac8c26dce51f1979366b5a8ae3a220067}} 
+virtual bool {\bfseries update} (const Game\+Timer \&dt)=0
+\item 
+\mbox{\Hypertarget{class_state_a0f5367d4f966f4bd72294c8acf295556}\label{class_state_a0f5367d4f966f4bd72294c8acf295556}} 
+virtual void {\bfseries On\+Key\+Down} (int key)
+\item 
+\mbox{\Hypertarget{class_state_aa23c3de687dd6a31fdac7f885b6149b5}\label{class_state_aa23c3de687dd6a31fdac7f885b6149b5}} 
+virtual void {\bfseries set\+Up\+State} ()=0
+\item 
+\mbox{\Hypertarget{class_state_a85ed9d89b1b60616c5d8b6fa978f225c}\label{class_state_a85ed9d89b1b60616c5d8b6fa978f225c}} 
+virtual void {\bfseries build\+State} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_a71d9930be1a58be7f711e245b7965d48}\label{class_state_a71d9930be1a58be7f711e245b7965d48}} 
+typedef std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_state}{State}} $>$ {\bfseries Ptr}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_state}{State}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_state_a6763de833ceb9c23df45aff163a4a1cd}\label{class_state_a6763de833ceb9c23df45aff163a4a1cd}} 
+void {\bfseries request\+Stack\+Push} (States\+::\+ID state\+ID)
+\item 
+\mbox{\Hypertarget{class_state_aa418660892d6161772c907bd8d70f910}\label{class_state_aa418660892d6161772c907bd8d70f910}} 
+void {\bfseries request\+Stack\+Pop} ()
+\item 
+\mbox{\Hypertarget{class_state_a4b602bed9bf0179ee5f6748fce340ae6}\label{class_state_a4b602bed9bf0179ee5f6748fce340ae6}} 
+void {\bfseries request\+State\+Clear} ()
+\item 
+\mbox{\Hypertarget{class_state_a93a72915d1aad6d8f7eacc81094dc920}\label{class_state_a93a72915d1aad6d8f7eacc81094dc920}} 
+\mbox{\hyperlink{struct_state_1_1_context}{Context}} {\bfseries get\+Context} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_loading_state_ad67173227cab48ec9305b5050f742f41}\label{class_loading_state_ad67173227cab48ec9305b5050f742f41}} 
+\index{LoadingState@{LoadingState}!buildState@{buildState}}
+\index{buildState@{buildState}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{buildState()}{buildState()}}
+{\footnotesize\ttfamily void Loading\+State\+::build\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_a54deea621d36140c3dd5b49988095254}\label{class_loading_state_a54deea621d36140c3dd5b49988095254}} 
+\index{LoadingState@{LoadingState}!draw@{draw}}
+\index{draw@{draw}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Loading\+State\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_render_context}{Render\+Context}}}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_aa8720555e74f7fd4c6467ce4fa8b7631}\label{class_loading_state_aa8720555e74f7fd4c6467ce4fa8b7631}} 
+\index{LoadingState@{LoadingState}!setUpState@{setUpState}}
+\index{setUpState@{setUpState}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{setUpState()}{setUpState()}}
+{\footnotesize\ttfamily void Loading\+State\+::set\+Up\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state}{State}}.
+
+\mbox{\Hypertarget{class_loading_state_ac64a19858e5701f6fbb49c6c7df3c39a}\label{class_loading_state_ac64a19858e5701f6fbb49c6c7df3c39a}} 
+\index{LoadingState@{LoadingState}!update@{update}}
+\index{update@{update}!LoadingState@{LoadingState}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily bool Loading\+State\+::update (\begin{DoxyParamCaption}\item[{const Game\+Timer \&}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_state}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ecoff/source/repos/\+Game3015-\/\+Final/\+Starter/Loading\+State.\+hpp\item 
+C\+:/\+Users/ecoff/source/repos/\+Game3015-\/\+Final/\+Starter/Loading\+State.\+cpp\end{DoxyCompactItemize}

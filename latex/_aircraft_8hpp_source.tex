@@ -1,5 +1,5 @@
 \hypertarget{_aircraft_8hpp_source}{}\doxysection{Aircraft.\+hpp}
-\label{_aircraft_8hpp_source}\index{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Aircraft.hpp@{C:/Users/ecoff/source/repos/DirectX12/A1/Starter/Aircraft.hpp}}
+\label{_aircraft_8hpp_source}\index{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/Aircraft.hpp@{C:/Users/ecoff/source/repos/Game3015-\/Final/Starter/Aircraft.hpp}}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -24,7 +24,7 @@
 \DoxyCodeLine{00020\ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{class_aircraft}{Aircraft}}();}
 \DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ updateCurrent(\textcolor{keyword}{const}\ GameTimer\&\ gt);}
-\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ drawCurrent(ID3D12GraphicsCommandList*\ cmdList,\ \mbox{\hyperlink{struct_frame_resource}{FrameResource}}*\ mCurrFrameResource)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ drawCurrent(\mbox{\hyperlink{struct_render_context}{RenderContext}}\ context)\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ buildCurrent();}
 \DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ GetCategory()\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00026\ }
