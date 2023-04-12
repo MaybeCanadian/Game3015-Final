@@ -59,6 +59,10 @@ void LoadingState::buildState()
 {
 }
 
+void LoadingState::setUpState()
+{
+}
+
 //bool LoadingState::handleEvent(const sf::Event& event)
 //{
 //	return true;

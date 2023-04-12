@@ -7,6 +7,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mWorld(context.game)
 	, mGame(context.game)
+	, pressed(false)
 
 {	
 }
@@ -23,25 +24,20 @@ bool MenuState::update(const GameTimer& dt)
 	CommandQueue& commands = mWorld.getCommandQueue();
 	//mPlayer.handleRealTimeInput(commands);
 
-	if (GetAsyncKeyState('V') & 0x8000)
+	if (GetAsyncKeyState('V') & 0x8000 && pressed == false)
 	{
-		bool hit = false;
-		if (!hit)
-		{
-			//mGame->GetStateStack()->popState();
-			mGame->GetStateStack()->pushState(States::Game);
-		}
+		requestStackPush(States::Game);
+		pressed = true;
+	}
+	else {
+		pressed = false;
 	}
 
 	return true;
 }
 
-void MenuState::buildState()
+void MenuState::setUpState()
 {
-	//Camera* camera = mGame->GetCamera();
-	//camera->SetPosition(0, 3, 0);
-	//camera->Pitch(90 * 3.14 / 360);
-
 	std::unique_ptr<SpriteNode> backgroundSprite(new SpriteNode(mGame));
 	auto mBackground = backgroundSprite.get();
 	mBackground->setPosition(0, 0, 0);
@@ -49,6 +45,13 @@ void MenuState::buildState()
 	//mBackground->setWorldRotation(-80 * Rads, 0.0f, 0.0f);
 	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, 0.0f));
 	mWorld.addToWorld(std::move(backgroundSprite));
+}
+
+void MenuState::buildState()
+{
+	//Camera* camera = mGame->GetCamera();
+	//camera->SetPosition(0, 3, 0);
+	//camera->Pitch(90 * 3.14 / 360);
 
 	mWorld.buildScene();
 }

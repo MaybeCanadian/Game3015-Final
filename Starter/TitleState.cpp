@@ -41,6 +41,10 @@ void TitleState::buildState()
 {
 }
 
+void TitleState::setUpState()
+{
+}
+
 //bool TitleState::handleEvent(const sf::Event& event)
 //{
 //	// If any key is pressed, trigger the next screen

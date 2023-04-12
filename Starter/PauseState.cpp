@@ -28,6 +28,10 @@ bool PauseState::update(const GameTimer& dt)
 	return false;
 }
 
+void PauseState::setUpState()
+{
+}
+
 void PauseState::buildState()
 {
 }

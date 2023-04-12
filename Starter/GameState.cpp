@@ -27,15 +27,20 @@ bool GameState::update(const GameTimer& dt)
 	CommandQueue& commands = mWorld.getCommandQueue();
 	mPlayer.handleRealTimeInput(commands);
 
+	if (GetAsyncKeyState('P') & 0x8000 && pausePressed == false)
+	{
+		requestStackPush(States::Menu);
+		pausePressed = true;
+	}
+	else {
+		pausePressed = false;
+	}
+
 	return true;
 }
 
-void GameState::buildState()
+void GameState::setUpState()
 {
-	//Camera* camera = mGame->GetCamera();
-	//camera->SetPosition(0, 2, -2.2);
-	//camera->Pitch(65 * 3.14 / 360);
-
 	std::unique_ptr<PlayerAircraft> player(new PlayerAircraft(mGame));
 	mPlayerAircraft = player.get();
 	mPlayerAircraft->setPosition(0, 0.5, 0.0);
@@ -58,6 +63,9 @@ void GameState::buildState()
 	raptor2->setWorldRotation(0, 0, 0);
 	//raptor2->setVelocity(0.0f, 0.1f, 0.0f);
 	mWorld.addToWorld(std::move(enemy2));
+}
 
+void GameState::buildState()
+{
 	mWorld.buildScene();
 }

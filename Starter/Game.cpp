@@ -37,8 +37,6 @@ bool Game::Initialize()
 	// so we have to query this information.
 	mCbvSrvDescriptorSize = md3dDevice->GetDescriptorHandleIncrementSize(D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV);
 
-
-
 	LoadTextures();
 	BuildRootSignature();
 	BuildDescriptorHeaps();
@@ -61,26 +59,26 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
+	//mStateStack.pushState(States::Game);
 	mStateStack.pushState(States::Game);
-	mStateStack.pushState(States::Menu);
 
 	return true;
 }
 
-void Game::RebuildItems() {
+void Game::RebuildItems()
+{
+	D3DApp::OnResize();
 
-	//Clear old render Items
 	mAllRitems.clear();
-	mOpaqueRitems.clear();
 
+	mCurrFrameResourceIndex = 0;
 
-	//Make new render Items
-	BuildRenderItems();
 	mStateStack.build();
 
-	//Clear old Frame Resources
-	mFrameResources.clear();
+	BuildRenderItems();
+
 	BuildFrameResources();
+
 }
 
 void Game::OnResize()
@@ -617,6 +615,8 @@ void Game::BuildPSOs()
 
 void Game::BuildFrameResources()
 {
+	mFrameResources.clear();
+
 	for (int i = 0; i < gNumFrameResources; ++i)
 	{
 		mFrameResources.push_back(std::make_unique<FrameResource>(md3dDevice.Get(),
@@ -660,9 +660,8 @@ void Game::BuildMaterials()
 
 void Game::BuildRenderItems()
 {
-	//mWorld.buildRoot();
+	mOpaqueRitems.clear();
 
-	// All the render items are opaque.
 	for (auto& e : mAllRitems)
 		mOpaqueRitems.push_back(e.get());
 }

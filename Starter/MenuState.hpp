@@ -12,6 +12,7 @@ public:
 
 	virtual void			draw(RenderContext context);
 	virtual bool			update(const GameTimer& dt);
+	virtual void			setUpState();
 	virtual void			buildState();
 
 
@@ -26,6 +27,8 @@ private:
 private:
 	Game*	mGame;
 	World	mWorld;
+
+	bool pressed;
 };
 
 #endif // BOOK_MENUSTATE_HPP

@@ -12,6 +12,7 @@ public:
 	virtual void		draw(RenderContext context);
 	virtual bool		update(const GameTimer& dt);
 	virtual void		buildState();
+	virtual void		setUpState();
 	//virtual bool		handleEvent(const sf::Event& event);
 
 
