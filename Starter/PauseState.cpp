@@ -22,7 +22,7 @@ bool PauseState::update(const GameTimer& dt)
 void PauseState::OnKeyDown(int key)
 {
 	//M key
-	if (key == 0x4D) {
+	if (key == VK_BACK) {
 		requestStateClear();
 		requestStackPush(States::Menu);
 	}
