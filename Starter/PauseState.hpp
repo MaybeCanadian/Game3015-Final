@@ -16,7 +16,7 @@ public:
 
 
 private:
-	
+	bool menuPressed = false;
 };
 
 #pragma endregion

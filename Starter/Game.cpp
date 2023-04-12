@@ -58,7 +58,7 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
-	mStateStack.pushState(States::Game);
+	mStateStack.pushState(States::Menu);
 
 	return true;
 }
@@ -93,16 +93,6 @@ void Game::OnResize()
 
 void Game::Update(const GameTimer& gt)
 {
-	//ProcessEvents();
-
-	if (GetAsyncKeyState('V') & 0x8000 && pressed == false)
-	{
-		mStateStack.pushState(States::Game);
-		pressed = true;
-	}
-	else {
-		pressed = false;
-	}
 
 	mStateStack.update(gt);
 

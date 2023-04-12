@@ -22,18 +22,32 @@ void GameState::draw(RenderContext context)
 
 bool GameState::update(const GameTimer& dt)
 {
-	mWorld.update(dt);
-
-	CommandQueue& commands = mWorld.getCommandQueue();
-	mPlayer.handleRealTimeInput(commands);
-
-	if (GetAsyncKeyState('P') & 0x8000 && pausePressed == false)
+	if (GetAsyncKeyState('P') & 0x8000)
 	{
-		requestStackPush(States::Menu);
-		pausePressed = true;
+		if (pausePressed == false) {
+			if (paused == false) {
+				requestStackPush(States::Pause);
+				paused = true;
+			}
+			else {
+				requestStackPop();
+				paused = false;
+			}
+
+			pausePressed = true;
+		}
 	}
 	else {
-		pausePressed = false;
+		if (pausePressed == true) {
+			pausePressed = false;
+		}
+	}
+
+	if (paused == false) {
+		mWorld.update(dt);
+
+		CommandQueue& commands = mWorld.getCommandQueue();
+		mPlayer.handleRealTimeInput(commands);
 	}
 
 	return true;
@@ -63,6 +77,13 @@ void GameState::setUpState()
 	raptor2->setWorldRotation(0, 0, 0);
 	//raptor2->setVelocity(0.0f, 0.1f, 0.0f);
 	mWorld.addToWorld(std::move(enemy2));
+
+	std::unique_ptr<SpriteNode> root(new SpriteNode(mGame));
+	auto mBackground = root.get();
+	mBackground->setPosition(0.0, 0.0, 0.0);
+	mBackground->setScale(10.0f, 1.0f, 200.0f);
+	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, -5.0f));
+	mWorld.addToWorld(std::move(root));
 }
 
 void GameState::buildState()

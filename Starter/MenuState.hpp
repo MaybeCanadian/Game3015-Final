@@ -28,7 +28,7 @@ private:
 	Game*	mGame;
 	World	mWorld;
 
-	bool pressed;
+	bool gamePressed;
 };
 
 #endif // BOOK_MENUSTATE_HPP

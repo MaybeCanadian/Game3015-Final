@@ -37,6 +37,7 @@ private:
 	Aircraft* mEnemy;
 
 	bool pausePressed = false;
+	bool paused = false;
 };
 
 #endif // BOOK_GAMESTATE_HPP

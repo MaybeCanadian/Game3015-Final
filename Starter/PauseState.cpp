@@ -25,7 +25,19 @@ void PauseState::draw(RenderContext context)
 
 bool PauseState::update(const GameTimer& dt)
 {
-	return false;
+
+	if (GetAsyncKeyState('M') & 0x8000 && menuPressed == false)
+	{
+		requestStateClear();
+		requestStackPush(States::Menu);
+		menuPressed = true;
+	}
+	else {
+		menuPressed = false;
+	}
+
+
+	return true;
 }
 
 void PauseState::setUpState()

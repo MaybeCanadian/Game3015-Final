@@ -7,7 +7,7 @@ MenuState::MenuState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mWorld(context.game)
 	, mGame(context.game)
-	, pressed(false)
+	, gamePressed(false)
 
 {	
 }
@@ -24,13 +24,14 @@ bool MenuState::update(const GameTimer& dt)
 	CommandQueue& commands = mWorld.getCommandQueue();
 	//mPlayer.handleRealTimeInput(commands);
 
-	if (GetAsyncKeyState('V') & 0x8000 && pressed == false)
+	if (GetAsyncKeyState('V') & 0x8000 && gamePressed == false)
 	{
+		requestStackPop();
 		requestStackPush(States::Game);
-		pressed = true;
+		gamePressed = true;
 	}
 	else {
-		pressed = false;
+		gamePressed = false;
 	}
 
 	return true;

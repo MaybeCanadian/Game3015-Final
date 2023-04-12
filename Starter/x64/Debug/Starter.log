@@ -1,4 +1,7 @@
 ﻿  Game.cpp
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\ecoff\source\repos\Game3015-Final\Starter\Game.cpp(31,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  MenuState.cpp
+  PauseState.cpp
+  Generating Code...
   Starter.vcxproj -> C:\Users\ecoff\source\repos\Game3015-Final\x64\Debug\Starter.exe
