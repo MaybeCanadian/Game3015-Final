@@ -1,8 +1,6 @@
 #include "MenuState.hpp"
 #include "Game.hpp"
 
-#define Rads 3.14/360
-
 MenuState::MenuState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mWorld(context.game)
@@ -48,6 +46,9 @@ void MenuState::OnKeyDown(int key)
 
 	if (key == VK_RETURN) {
 		if (currentSelection == 0) {
+			Camera* mCamera = mGame->GetCamera();
+			mCamera->Pitch(-175 * Rads);
+
 			requestStackPop();
 			requestStackPush(States::Game);
 			return;
@@ -69,22 +70,22 @@ void MenuState::setUpState()
 
 	std::unique_ptr<MenuButton> Play(new MenuButton(mGame, MenuButton::Play, MenuButton::Selected));
 	PlayButton = Play.get();
-	PlayButton->setPosition(0, 0, 0);
-	PlayButton->setScale(1.5, 1.0, 1.05);
+	PlayButton->setPosition(0, 0.1, 0.1);
+	PlayButton->setScale(0.2, 1.0, 0.1);
 	mWorld.addToWorld(std::move(Play));
 
 	std::unique_ptr<MenuButton> Quit(new MenuButton(mGame, MenuButton::Quit, MenuButton::UnSelected));
 	QuitButton = Quit.get();
-	QuitButton->setPosition(0, 0, 0);
-	QuitButton->setScale(1.5, 1.0, 1.05);
+	QuitButton->setPosition(0.0, 0.1, -0.1);
+	QuitButton->setScale(0.2, 1.0, 0.1);
 	mWorld.addToWorld(std::move(Quit));
+
+	Camera* camera = mGame->GetCamera();
+	camera->SetPosition(0, 1.2, -0.05);
+	camera->Pitch(175 * Rads);
 }
 
 void MenuState::buildState()
 {
-	Camera* camera = mGame->GetCamera();
-	camera->SetPosition(0, 1.2, -0.05);
-	camera->Pitch(110 * Rads);
-
 	mWorld.buildScene();
 }

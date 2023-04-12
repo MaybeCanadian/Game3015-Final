@@ -27,9 +27,6 @@ bool Game::Initialize()
 	if (!D3DApp::Initialize())
 		return false;
 
-	mCamera.SetPosition(0, 2, -2.2);
-	mCamera.Pitch(65 * 3.14 / 360);
-
 	// Reset the command list to prep for initialization commands.
 	ThrowIfFailed(mCommandList->Reset(mDirectCmdListAlloc.Get(), nullptr));
 
@@ -412,6 +409,46 @@ void Game::LoadTextures()
 		MenuTex->Resource, MenuTex->UploadHeap));
 
 	mTextures[MenuTex->Name] = std::move(MenuTex);
+
+	//Play UnSelected
+	auto PlayUnselected = std::make_unique<Texture>();
+	PlayUnselected->Name = "PlayUnSelected";
+	PlayUnselected->Filename = L"Textures/PlayUnselected.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), PlayUnselected->Filename.c_str(),
+		PlayUnselected->Resource, PlayUnselected->UploadHeap));
+
+	mTextures[PlayUnselected->Name] = std::move(PlayUnselected);
+
+	//Play Selected
+	auto PlaySelected = std::make_unique<Texture>();
+	PlaySelected->Name = "PlaySelected";
+	PlaySelected->Filename = L"Textures/PlaySelected.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), PlaySelected->Filename.c_str(),
+		PlaySelected->Resource, PlaySelected->UploadHeap));
+
+	mTextures[PlaySelected->Name] = std::move(PlaySelected);
+
+	//QuitUnselected Selected
+	auto QuitUnselected = std::make_unique<Texture>();
+	QuitUnselected->Name = "QuitUnSelected";
+	QuitUnselected->Filename = L"Textures/QuitUnselected.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), QuitUnselected->Filename.c_str(),
+		QuitUnselected->Resource, QuitUnselected->UploadHeap));
+
+	mTextures[QuitUnselected->Name] = std::move(QuitUnselected);
+
+	//QuitSelected Selected
+	auto QuitSelected = std::make_unique<Texture>();
+	QuitSelected->Name = "QuitSelected";
+	QuitSelected->Filename = L"Textures/QuitSelected.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), QuitSelected->Filename.c_str(),
+		QuitSelected->Resource, QuitSelected->UploadHeap));
+
+	mTextures[QuitSelected->Name] = std::move(QuitSelected);
 }
 
 void Game::BuildRootSignature()
@@ -464,7 +501,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 4;
+	srvHeapDesc.NumDescriptors = 8;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -478,6 +515,10 @@ void Game::BuildDescriptorHeaps()
 	auto RaptorTex = mTextures["RaptorTex"]->Resource;
 	auto DesertTex = mTextures["DesertTex"]->Resource;
 	auto MenuTex = mTextures["MenuTex"]->Resource;
+	auto PlayUnSelected = mTextures["PlayUnSelected"]->Resource;
+	auto PlaySelected = mTextures["PlaySelected"]->Resource;
+	auto QuitUnSelected = mTextures["QuitUnSelected"]->Resource;
+	auto QuitSelected = mTextures["QuitSelected"]->Resource;
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 
@@ -517,6 +558,27 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = MenuTex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(MenuTex.Get(), &srvDesc, hDescriptor);
+
+	//Play UnSelected
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = PlayUnSelected->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(PlayUnSelected.Get(), &srvDesc, hDescriptor);
+
+	//Play Selected
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = PlaySelected->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(PlaySelected.Get(), &srvDesc, hDescriptor);
+
+
+	//Quit UnSelected
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = QuitUnSelected->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(QuitUnSelected.Get(), &srvDesc, hDescriptor);
+
+	//Quit Selected
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = QuitSelected->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(QuitSelected.Get(), &srvDesc, hDescriptor);
 }
 
 void Game::registerStates()
@@ -678,6 +740,47 @@ void Game::BuildMaterials()
 	Menu->Roughness = 0.2f;
 
 	mMaterials["Menu"] = std::move(Menu);
+	
+	auto PlayUnSelected = std::make_unique<Material>();
+	PlayUnSelected->Name = "PlayUnSelected";
+	PlayUnSelected->MatCBIndex = 4;
+	PlayUnSelected->DiffuseSrvHeapIndex = 4;
+	PlayUnSelected->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	PlayUnSelected->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	PlayUnSelected->Roughness = 0.2f;
+
+	mMaterials["PlayUnSelected"] = std::move(PlayUnSelected);
+
+
+	auto PlaySelected = std::make_unique<Material>();
+	PlaySelected->Name = "PlaySelected";
+	PlaySelected->MatCBIndex = 5;
+	PlaySelected->DiffuseSrvHeapIndex = 5;
+	PlaySelected->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	PlaySelected->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	PlaySelected->Roughness = 0.2f;
+
+	mMaterials["PlaySelected"] = std::move(PlaySelected);
+
+	auto QuitUnSelected = std::make_unique<Material>();
+	QuitUnSelected->Name = "QuitUnSelected";
+	QuitUnSelected->MatCBIndex = 6;
+	QuitUnSelected->DiffuseSrvHeapIndex = 6;
+	QuitUnSelected->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	QuitUnSelected->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	QuitUnSelected->Roughness = 0.2f;
+
+	mMaterials["QuitUnSelected"] = std::move(QuitUnSelected);
+
+	auto QuitSelected = std::make_unique<Material>();
+	QuitSelected->Name = "QuitSelected";
+	QuitSelected->MatCBIndex = 7;
+	QuitSelected->DiffuseSrvHeapIndex = 7;
+	QuitSelected->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	QuitSelected->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	QuitSelected->Roughness = 0.2f;
+
+	mMaterials["QuitSelected"] = std::move(QuitSelected);
 
 }
 

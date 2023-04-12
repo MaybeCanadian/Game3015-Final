@@ -4,6 +4,8 @@
 
 #include "StateStack.hpp"
 
+#define Rads 3.14/360
+
 struct RenderContext {
 	ID3D12GraphicsCommandList* cmdList;
 	FrameResource* mCurrFrameResource;

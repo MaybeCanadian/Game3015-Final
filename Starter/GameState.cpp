@@ -11,6 +11,7 @@ GameState::GameState(StateStack& stack, Context context)
 	, mWorldBounds(-1.5f, 1.5f, 200.0f, 0.0f) //Left, Right, Down, Up
 	, mSpawnPosition(0.f, 0.f)
 	, mScrollSpeed(1.0f)
+	, paused(false)
 {
 
 }
@@ -78,6 +79,11 @@ void GameState::setUpState()
 	mBackground->setScale(10.0f, 1.0f, 200.0f);
 	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, -5.0f));
 	mWorld.addToWorld(std::move(root));
+
+	Camera* mCamera = mGame->GetCamera();
+
+	mCamera->SetPosition(0, 2, -2.2);
+	mCamera->Pitch(65 * Rads);
 }
 
 void GameState::buildState()

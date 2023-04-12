@@ -15,6 +15,7 @@ public:
 	virtual void		buildState();
 
 private:
+	Game* mGame;
 };
 
 #pragma endregion

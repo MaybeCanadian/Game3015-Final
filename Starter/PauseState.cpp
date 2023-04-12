@@ -5,6 +5,7 @@
 
 PauseState::PauseState(StateStack& stack, Context context)
 	: State(stack, context)
+	, mGame(context.game)
 {
 
 }
@@ -23,6 +24,9 @@ void PauseState::OnKeyDown(int key)
 {
 	//M key
 	if (key == VK_BACK) {
+		Camera* mCamera = mGame->GetCamera();
+		mCamera->Pitch(-65 * Rads);
+
 		requestStateClear();
 		requestStackPush(States::Menu);
 	}

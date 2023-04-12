@@ -78,7 +78,7 @@ void MenuButton::buildCurrent()
 	renderer->World = getTransform();
 	XMStoreFloat4x4(&renderer->TexTransform, XMMatrixScaling(1.0f, 1.0f, 1.0f));
 	renderer->ObjCBIndex = game->getRenderItems().size();
-	renderer->Mat = game->getMaterials()["Menu"].get();
+	renderer->Mat = game->getMaterials()[mSprite].get();
 	renderer->Geo = game->getGeometries()["boxGeo"].get();
 	renderer->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 	renderer->IndexCount = renderer->Geo->DrawArgs["box"].IndexCount;
@@ -88,16 +88,16 @@ void MenuButton::buildCurrent()
 	game->getRenderItems().push_back(std::move(render));
 
 	auto altRender = std::make_unique<RenderItem>();
-	altRenderer = render.get();
+	altRenderer = altRender.get();
 	altRenderer->World = getTransform();
 	XMStoreFloat4x4(&altRenderer->TexTransform, XMMatrixScaling(1.0f, 1.0f, 1.0f));
 	altRenderer->ObjCBIndex = game->getRenderItems().size();
-	altRenderer->Mat = game->getMaterials()["Menu"].get();
+	altRenderer->Mat = game->getMaterials()[mAltSprite].get();
 	altRenderer->Geo = game->getGeometries()["boxGeo"].get();
 	altRenderer->PrimitiveType = D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST;
 	altRenderer->IndexCount = altRenderer->Geo->DrawArgs["box"].IndexCount;
 	altRenderer->StartIndexLocation = altRenderer->Geo->DrawArgs["box"].StartIndexLocation;
 	altRenderer->BaseVertexLocation = altRenderer->Geo->DrawArgs["box"].BaseVertexLocation;
 
-	game->getRenderItems().push_back(std::move(render));
+	game->getRenderItems().push_back(std::move(altRender));
 }
