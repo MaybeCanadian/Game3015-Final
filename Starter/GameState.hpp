@@ -21,7 +21,6 @@ public:
 	virtual void		OnKeyDown(int key)override;
 	virtual void		setUpState();
 	virtual void		buildState();
-	//virtual bool		handleEvent(const sf::Event& event);
 
 
 private:

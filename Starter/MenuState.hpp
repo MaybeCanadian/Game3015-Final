@@ -29,6 +29,9 @@ private:
 	Game*	mGame;
 	World	mWorld;
 
+	MenuButton* PlayButton;
+	MenuButton* QuitButton;
+
 	int currentSelection = 0;
 };
 

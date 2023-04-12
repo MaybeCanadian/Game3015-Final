@@ -31,7 +31,8 @@ void MenuState::OnKeyDown(int key)
 		if (currentSelection > 1) {
 			currentSelection = 0;
 		}
-
+		PlayButton->switchState();
+		QuitButton->switchState();
 		return;
 	}
 
@@ -40,7 +41,8 @@ void MenuState::OnKeyDown(int key)
 		if (currentSelection < 0) {
 			currentSelection = 1;
 		}
-
+		PlayButton->switchState();
+		QuitButton->switchState();
 		return;
 	}
 
@@ -59,20 +61,30 @@ void MenuState::OnKeyDown(int key)
 
 void MenuState::setUpState()
 {
-	std::unique_ptr<SpriteNode> backgroundSprite(new SpriteNode(mGame));
+	std::unique_ptr<MenuBackground> backgroundSprite(new MenuBackground(mGame));
 	auto mBackground = backgroundSprite.get();
 	mBackground->setPosition(0, 0, 0);
-	mBackground->setScale(3.0, 1.0, 3.0);
-	//mBackground->setWorldRotation(-80 * Rads, 0.0f, 0.0f);
-	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, 0.0f));
+	mBackground->setScale(1.5, 1.0, 1.05);
 	mWorld.addToWorld(std::move(backgroundSprite));
+
+	std::unique_ptr<MenuButton> Play(new MenuButton(mGame, MenuButton::Play, MenuButton::Selected));
+	PlayButton = Play.get();
+	PlayButton->setPosition(0, 0, 0);
+	PlayButton->setScale(1.5, 1.0, 1.05);
+	mWorld.addToWorld(std::move(Play));
+
+	std::unique_ptr<MenuButton> Quit(new MenuButton(mGame, MenuButton::Quit, MenuButton::UnSelected));
+	QuitButton = Quit.get();
+	QuitButton->setPosition(0, 0, 0);
+	QuitButton->setScale(1.5, 1.0, 1.05);
+	mWorld.addToWorld(std::move(Quit));
 }
 
 void MenuState::buildState()
 {
-	//Camera* camera = mGame->GetCamera();
-	//camera->SetPosition(0, 3, 0);
-	//camera->Pitch(90 * 3.14 / 360);
+	Camera* camera = mGame->GetCamera();
+	camera->SetPosition(0, 1.2, -0.05);
+	camera->Pitch(110 * Rads);
 
 	mWorld.buildScene();
 }

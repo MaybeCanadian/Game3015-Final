@@ -3,6 +3,8 @@
 #include "Aircraft.hpp"
 #include "PlayerAircraft.hpp"
 #include "SpriteNode.h"
+#include "MenuBackground.hpp"
+#include "MenuButton.hpp"
 #include "CommandQueue.hpp"
 #include "Command.hpp"
 
