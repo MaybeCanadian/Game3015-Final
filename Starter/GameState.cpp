@@ -22,27 +22,6 @@ void GameState::draw(RenderContext context)
 
 bool GameState::update(const GameTimer& dt)
 {
-	if (GetAsyncKeyState('P') & 0x8000)
-	{
-		if (pausePressed == false) {
-			if (paused == false) {
-				requestStackPush(States::Pause);
-				paused = true;
-			}
-			else {
-				requestStackPop();
-				paused = false;
-			}
-
-			pausePressed = true;
-		}
-	}
-	else {
-		if (pausePressed == true) {
-			pausePressed = false;
-		}
-	}
-
 	if (paused == false) {
 		mWorld.update(dt);
 
@@ -51,6 +30,21 @@ bool GameState::update(const GameTimer& dt)
 	}
 
 	return true;
+}
+
+void GameState::OnKeyDown(int key)
+{
+	//P key
+	if (key == 0x50) {
+		if (paused == true) {
+			paused = false;
+			requestStackPop();
+			return;
+		}
+		
+		paused = true;
+		requestStackPush(States::Pause);
+	}
 }
 
 void GameState::setUpState()

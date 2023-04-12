@@ -58,7 +58,7 @@ bool Game::Initialize()
 	FlushCommandQueue();
 
 	registerStates();
-	mStateStack.pushState(States::Menu);
+	mStateStack.pushState(States::Title);
 
 	return true;
 }
@@ -219,6 +219,11 @@ void Game::OnMouseMove(WPARAM btnState, int x, int y)
 	}
 	mLastMousePos.x = x;
 	mLastMousePos.y = y;
+}
+
+void Game::OnKeyDown(WPARAM key)
+{
+	mStateStack.OnKeyDown(key);
 }
 
 void Game::OnKeyboardInput(const GameTimer& gt)

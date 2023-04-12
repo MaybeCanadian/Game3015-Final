@@ -56,6 +56,12 @@ void StateStack::clearStates()
 	mPendingList.push_back(PendingChange(Clear));
 }
 
+void StateStack::OnKeyDown(int key)
+{
+	for (State::Ptr& state : mStack)
+		state->OnKeyDown(key);
+}
+
 bool StateStack::isEmpty() const
 {
 	return mStack.empty();

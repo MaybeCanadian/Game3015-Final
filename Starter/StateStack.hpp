@@ -37,6 +37,8 @@ public:
 	void				popState();
 	void				clearStates();
 
+	void				OnKeyDown(int Key);
+
 	bool				isEmpty() const;
 
 

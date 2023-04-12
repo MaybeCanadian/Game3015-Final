@@ -33,6 +33,7 @@ public:
 
 	virtual void		draw(RenderContext context) = 0;
 	virtual bool		update(const GameTimer& dt) = 0;
+	virtual void		OnKeyDown(int key) {};
 	virtual void		setUpState() = 0;
 	virtual void		buildState() = 0;
 	//virtual bool		handleEvent(const sf::Event& event) = 0;

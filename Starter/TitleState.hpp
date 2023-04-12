@@ -11,17 +11,13 @@ public:
 
 	virtual void		draw(RenderContext context);
 	virtual bool		update(const GameTimer& dt);
+	virtual void		OnKeyDown(int key)override;
 	virtual void		buildState();
 	virtual void		setUpState();
-	//virtual bool		handleEvent(const sf::Event& event);
 
 
 private:
-	//sf::Sprite			mBackgroundSprite;
-	//sf::Text			mText;
-
-	//bool				mShowText;
-	//sf::Time			mTextEffectTime;
+	bool menuPressed = false;
 };
 
 #endif // BOOK_TITLESTATE_HPP
