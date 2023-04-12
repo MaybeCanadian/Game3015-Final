@@ -2,6 +2,7 @@
 #pragma once
 
 #include "State.hpp"
+#include "World.hpp"
 
 class PauseState : public State
 {
@@ -16,6 +17,7 @@ public:
 
 private:
 	Game* mGame;
+	World mWorld;
 };
 
 #pragma endregion

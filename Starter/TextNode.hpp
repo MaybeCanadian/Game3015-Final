@@ -7,7 +7,7 @@ class TextNode :
 public:
 	enum Type {
 		TitleText, 
-		PauseTitle,
+		PauseImage,
 		PauseText,
 	};
 public:

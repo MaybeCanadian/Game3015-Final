@@ -6,13 +6,14 @@
 PauseState::PauseState(StateStack& stack, Context context)
 	: State(stack, context)
 	, mGame(context.game)
+	, mWorld(context.game)
 {
 
 }
 
 void PauseState::draw(RenderContext context)
 {
-	
+	mWorld.draw(context);
 }
 
 bool PauseState::update(const GameTimer& dt)
@@ -34,10 +35,17 @@ void PauseState::OnKeyDown(int key)
 
 void PauseState::setUpState()
 {
+	std::unique_ptr<TextNode> titleText(new TextNode(mGame, TextNode::PauseImage));
+	auto text = titleText.get();
+	text->setPosition(0, 1.0, 0.2);
+	text->setScale(1.0, 1.0, 1.0);
+	text->setWorldRotation(-65 * Rads, 0.0f, 0.0f);
+	mWorld.addToWorld(std::move(titleText));
 }
 
 void PauseState::buildState()
 {
+	mWorld.buildScene();
 }
 
 #pragma endregion

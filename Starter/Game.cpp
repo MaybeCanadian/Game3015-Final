@@ -459,6 +459,16 @@ void Game::LoadTextures()
 		TitleTex->Resource, TitleTex->UploadHeap));
 
 	mTextures[TitleTex->Name] = std::move(TitleTex);
+
+	//Pause Image
+	auto Pause = std::make_unique<Texture>();
+	Pause->Name = "Pause";
+	Pause->Filename = L"Textures/Pause.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), Pause->Filename.c_str(),
+		Pause->Resource, Pause->UploadHeap));
+
+	mTextures[Pause->Name] = std::move(Pause);
 }
 
 void Game::BuildRootSignature()
@@ -511,7 +521,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 9;
+	srvHeapDesc.NumDescriptors = 10;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -530,6 +540,7 @@ void Game::BuildDescriptorHeaps()
 	auto QuitUnSelected = mTextures["QuitUnSelected"]->Resource;
 	auto QuitSelected = mTextures["QuitSelected"]->Resource;
 	auto Titletex = mTextures["TitleTex"]->Resource;
+	auto Pause = mTextures["Pause"]->Resource;
 
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
@@ -596,6 +607,10 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = Titletex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(Titletex.Get(), &srvDesc, hDescriptor);
+
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = Pause->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(Pause.Get(), &srvDesc, hDescriptor);
 }
 
 void Game::registerStates()
@@ -808,6 +823,16 @@ void Game::BuildMaterials()
 	Title->Roughness = 0.2f;
 
 	mMaterials["TitleText"] = std::move(Title);
+
+	auto Pause = std::make_unique<Material>();
+	Pause->Name = "PauseImage";
+	Pause->MatCBIndex = 9;
+	Pause->DiffuseSrvHeapIndex = 9;
+	Pause->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Pause->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	Pause->Roughness = 0.2f;
+
+	mMaterials["PauseImage"] = std::move(Pause);
 
 }
 

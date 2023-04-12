@@ -7,8 +7,8 @@ TextNode::TextNode(Game* game, Type type) : SceneNode(game)
 	case TitleText:
 		mSprite = "TitleText";
 		break;
-	case PauseTitle:
-		mSprite = "PauseTitle";
+	case PauseImage:
+		mSprite = "PauseImage";
 		break;
 	case PauseText:
 		mSprite = "PauseText";
