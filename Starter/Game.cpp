@@ -393,7 +393,7 @@ void Game::LoadTextures()
 	//Desert
 	auto DesertTex = std::make_unique<Texture>();
 	DesertTex->Name = "DesertTex";
-	DesertTex->Filename = L"Textures/Desert.dds";
+	DesertTex->Filename = L"Textures/StarBackground.dds";
 	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
 		mCommandList.Get(), DesertTex->Filename.c_str(),
 		DesertTex->Resource, DesertTex->UploadHeap));
@@ -775,7 +775,7 @@ void Game::BuildMaterials()
 	Desert->MatCBIndex = 2;
 	Desert->DiffuseSrvHeapIndex = 2;
 	Desert->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
-	Desert->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	Desert->FresnelR0 = XMFLOAT3(0.1f, 0.1f, 0.1f);
 	Desert->Roughness = 0.2f;
 
 	mMaterials["Desert"] = std::move(Desert);

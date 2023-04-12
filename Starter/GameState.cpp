@@ -76,7 +76,7 @@ void GameState::setUpState()
 	std::unique_ptr<SpriteNode> root(new SpriteNode(mGame));
 	auto mBackground = root.get();
 	mBackground->setPosition(0.0, 0.0, 0.0);
-	mBackground->setScale(10.0f, 1.0f, 200.0f);
+	mBackground->setScale(15.0f, 1.0f, 400.0f);
 	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, -5.0f));
 	mWorld.addToWorld(std::move(root));
 
