@@ -469,6 +469,16 @@ void Game::LoadTextures()
 		Pause->Resource, Pause->UploadHeap));
 
 	mTextures[Pause->Name] = std::move(Pause);
+
+	//Pause Text
+	auto PauseTex = std::make_unique<Texture>();
+	PauseTex->Name = "PauseText";
+	PauseTex->Filename = L"Textures/PauseText.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), PauseTex->Filename.c_str(),
+		PauseTex->Resource, PauseTex->UploadHeap));
+
+	mTextures[PauseTex->Name] = std::move(PauseTex);
 }
 
 void Game::BuildRootSignature()
@@ -521,7 +531,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 10;
+	srvHeapDesc.NumDescriptors = 11;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -541,6 +551,7 @@ void Game::BuildDescriptorHeaps()
 	auto QuitSelected = mTextures["QuitSelected"]->Resource;
 	auto Titletex = mTextures["TitleTex"]->Resource;
 	auto Pause = mTextures["Pause"]->Resource;
+	auto PauseText = mTextures["PauseText"]->Resource;
 
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
@@ -608,9 +619,15 @@ void Game::BuildDescriptorHeaps()
 	srvDesc.Format = Titletex->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(Titletex.Get(), &srvDesc, hDescriptor);
 
+	//Pause Image
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = Pause->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(Pause.Get(), &srvDesc, hDescriptor);
+
+	//Pause Text
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = PauseText->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(PauseText.Get(), &srvDesc, hDescriptor);
 }
 
 void Game::registerStates()
@@ -833,6 +850,16 @@ void Game::BuildMaterials()
 	Pause->Roughness = 0.2f;
 
 	mMaterials["PauseImage"] = std::move(Pause);
+
+	auto PauseText = std::make_unique<Material>();
+	PauseText->Name = "PauseText";
+	PauseText->MatCBIndex = 10;
+	PauseText->DiffuseSrvHeapIndex = 10;
+	PauseText->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	PauseText->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	PauseText->Roughness = 0.2f;
+
+	mMaterials["PauseText"] = std::move(PauseText);
 
 }
 

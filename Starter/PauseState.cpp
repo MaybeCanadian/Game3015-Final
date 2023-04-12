@@ -41,6 +41,13 @@ void PauseState::setUpState()
 	text->setScale(1.0, 1.0, 1.0);
 	text->setWorldRotation(-65 * Rads, 0.0f, 0.0f);
 	mWorld.addToWorld(std::move(titleText));
+
+	std::unique_ptr<TextNode> textText(new TextNode(mGame, TextNode::PauseText));
+	auto text2 = textText.get();
+	text2->setPosition(0, 1.0, -1.0f);
+	text2->setScale(1.7f, 1.0, 0.4);
+	text2->setWorldRotation(-65 * Rads, 0.0f, 0.0f);
+	mWorld.addToWorld(std::move(textText));
 }
 
 void PauseState::buildState()

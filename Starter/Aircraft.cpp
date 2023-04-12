@@ -20,6 +20,63 @@ Aircraft::Aircraft(Type type, Game* game) : Entity(game)
 
 void Aircraft::updateCurrent(const GameTimer& gt)
 {
+	float acelX = getAcceleration().x;
+	float acelZ = getAcceleration().z;
+
+	float rotZ = getWorldRotation().z;
+	float rotX = getWorldRotation().x;
+
+	if (acelX > 0) {
+		rotZ -= 60 * Rads * gt.DeltaTime();
+	}
+	else if(acelX < 0) {
+		rotZ += 60 * Rads * gt.DeltaTime();
+	}
+	else {
+		if (rotZ != 0) {
+			if (rotZ > 0) {
+				rotZ -= 30 * Rads * gt.DeltaTime();
+			}
+			else {
+				rotZ += 30 * Rads * gt.DeltaTime();
+			}
+		}
+	}
+
+	if (acelZ > 0) {
+		rotX += 60 * Rads * gt.DeltaTime();
+	}
+	else if (acelZ < 0) {
+		rotX -= 60 * Rads * gt.DeltaTime();
+	}
+	else {
+		if (rotX != 0) {
+			if (rotX > 0) {
+				rotX -= 30 * Rads * gt.DeltaTime();
+			}
+			else {
+				rotX += 30 * Rads * gt.DeltaTime();
+			}
+		}
+	}
+
+
+	if (rotZ < -20 * Rads) {
+		rotZ = -20 * Rads;
+	}
+	else if (rotZ > 20 * Rads) {
+		rotZ = 20 * Rads;
+	}
+
+	if (rotX < -10 * Rads) {
+		rotX = -10 * Rads;
+	}
+	else if (rotX > 20 * Rads) {
+		rotX = 20 * Rads;
+	}
+
+	setWorldRotation(rotX, 0.0f, rotZ);
+
 	Entity::updateCurrent(gt);
 }
 
