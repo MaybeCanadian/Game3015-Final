@@ -449,6 +449,16 @@ void Game::LoadTextures()
 		QuitSelected->Resource, QuitSelected->UploadHeap));
 
 	mTextures[QuitSelected->Name] = std::move(QuitSelected);
+
+	//Title Text
+	auto TitleTex = std::make_unique<Texture>();
+	TitleTex->Name = "TitleTex";
+	TitleTex->Filename = L"Textures/PressKey.dds";
+	ThrowIfFailed(DirectX::CreateDDSTextureFromFile12(md3dDevice.Get(),
+		mCommandList.Get(), TitleTex->Filename.c_str(),
+		TitleTex->Resource, TitleTex->UploadHeap));
+
+	mTextures[TitleTex->Name] = std::move(TitleTex);
 }
 
 void Game::BuildRootSignature()
@@ -501,7 +511,7 @@ void Game::BuildDescriptorHeaps()
 	// Create the SRV heap.
 	//
 	D3D12_DESCRIPTOR_HEAP_DESC srvHeapDesc = {};
-	srvHeapDesc.NumDescriptors = 8;
+	srvHeapDesc.NumDescriptors = 9;
 	srvHeapDesc.Type = D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV;
 	srvHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 	ThrowIfFailed(md3dDevice->CreateDescriptorHeap(&srvHeapDesc, IID_PPV_ARGS(&mSrvDescriptorHeap)));
@@ -519,6 +529,8 @@ void Game::BuildDescriptorHeaps()
 	auto PlaySelected = mTextures["PlaySelected"]->Resource;
 	auto QuitUnSelected = mTextures["QuitUnSelected"]->Resource;
 	auto QuitSelected = mTextures["QuitSelected"]->Resource;
+	auto Titletex = mTextures["TitleTex"]->Resource;
+
 
 	D3D12_SHADER_RESOURCE_VIEW_DESC srvDesc = {};
 
@@ -579,6 +591,11 @@ void Game::BuildDescriptorHeaps()
 	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
 	srvDesc.Format = QuitSelected->GetDesc().Format;
 	md3dDevice->CreateShaderResourceView(QuitSelected.Get(), &srvDesc, hDescriptor);
+
+	//Quit Selected
+	hDescriptor.Offset(1, mCbvSrvDescriptorSize);
+	srvDesc.Format = Titletex->GetDesc().Format;
+	md3dDevice->CreateShaderResourceView(Titletex.Get(), &srvDesc, hDescriptor);
 }
 
 void Game::registerStates()
@@ -781,6 +798,16 @@ void Game::BuildMaterials()
 	QuitSelected->Roughness = 0.2f;
 
 	mMaterials["QuitSelected"] = std::move(QuitSelected);
+
+	auto Title = std::make_unique<Material>();
+	Title->Name = "TitleText";
+	Title->MatCBIndex = 8;
+	Title->DiffuseSrvHeapIndex = 8;
+	Title->DiffuseAlbedo = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	Title->FresnelR0 = XMFLOAT3(0.05f, 0.05f, 0.05f);
+	Title->Roughness = 0.2f;
+
+	mMaterials["TitleText"] = std::move(Title);
 
 }
 

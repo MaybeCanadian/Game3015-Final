@@ -40,6 +40,12 @@ void TitleState::setUpState()
 	mBackground->setScale(1.5, 1.0, 1.05);
 	mWorld.addToWorld(std::move(backgroundSprite));
 
+	std::unique_ptr<TextNode> titleText(new TextNode(mGame, TextNode::TitleText));
+	auto text = titleText.get();
+	text->setPosition(0, 0.1, 0);
+	text->setScale(0.7, 1.0, 0.05);
+	mWorld.addToWorld(std::move(titleText));
+
 	Camera* camera = mGame->GetCamera();
 	camera->SetPosition(0, 1.2, -0.05);
 	camera->Pitch(175 * Rads);

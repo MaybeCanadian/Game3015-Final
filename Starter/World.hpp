@@ -5,6 +5,7 @@
 #include "SpriteNode.h"
 #include "MenuBackground.hpp"
 #include "MenuButton.hpp"
+#include "TextNode.hpp"
 #include "CommandQueue.hpp"
 #include "Command.hpp"
 
