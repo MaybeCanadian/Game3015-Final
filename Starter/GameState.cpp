@@ -23,11 +23,20 @@ void GameState::draw(RenderContext context)
 
 bool GameState::update(const GameTimer& dt)
 {
+	//mWorld.update(dt);
+
 	if (paused == false) {
 		mWorld.update(dt);
 
 		CommandQueue& commands = mWorld.getCommandQueue();
 		mPlayer.handleRealTimeInput(commands);
+
+		XMFLOAT3 camPos;
+		camPos.x = mPlayerAircraft->getWorldPosition().x + 0.0f;
+		camPos.y = mPlayerAircraft->getWorldPosition().y + 1.0f;
+		camPos.z = mPlayerAircraft->getWorldPosition().z + -1.0f;
+
+		mGame->GetCamera()->SetPosition(camPos); ;
 	}
 
 	return true;
@@ -79,6 +88,13 @@ void GameState::setUpState()
 	mBackground->setScale(15.0f, 1.0f, 400.0f);
 	mBackground->setVelocity(XMFLOAT3(0.0f, 0.0f, -5.0f));
 	mWorld.addToWorld(std::move(root));
+
+	std::unique_ptr<SpriteNode> root2(new SpriteNode(mGame));
+	auto mBackground2 = root2.get();
+	mBackground2->setPosition(0.0, 0.0, 200.0);
+	mBackground2->setScale(15.0f, 1.0f, 400.0f);
+	mBackground2->setVelocity(XMFLOAT3(0.0f, 0.0f, -5.0f));
+	mWorld.addToWorld(std::move(root2));
 
 	Camera* mCamera = mGame->GetCamera();
 

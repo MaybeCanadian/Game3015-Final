@@ -10,7 +10,7 @@ void SpriteNode::updateCurrent(const GameTimer& gt)
 	Entity::updateCurrent(gt);
 
 	if (getWorldPosition().z < -200.0f) {
-		setPosition(0.0f, 0.0f, 0.0f);
+		setPosition(0.0f, 0.0f, 200.0f);
 	}
 }
 
